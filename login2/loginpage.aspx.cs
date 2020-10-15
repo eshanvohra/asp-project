@@ -47,7 +47,7 @@ namespace login2
                 }
                 else
                 {
-                    Response.Write("Login declined! wRong Password");
+                    Response.Write("Login declined! wrong Password");
                 }
                 USERID.Text = "";
                 PASSWORD.Text = "";
