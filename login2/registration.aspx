@@ -4,6 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@600&display=swap" rel="stylesheet"/>
     <title> REGRISTRATION PAGE</title>
     <style>
          *{
@@ -11,10 +13,13 @@
             margin:0px;
         }
         body{
-            width:100vh;
+            width:100vw;
             height:100vh;
-          // background: linear-gradient(to bottom right,rgb(19, 18, 18),rgb(97, 94, 94));
-        background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            background-image: linear-gradient(rgba(98, 102, 98, 0.6),rgba(98, 102, 98, 0.6)), url('../Images/backImg.jpg');
+            background-size:100% 100% ;
+            background-repeat: no-repeat;
+            font-family: 'Baloo 2', cursive;
            }
         .reg-box{      /*external div*/
             width:600px;
@@ -24,9 +29,8 @@
             left:50%;  
             color:white;
             transform: translate(-50%,-50%); 
-         //   background-color: rgb(75, 69, 69);
-         background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(161,117,24,1) 100%);  
-         border-radius: 40px 5px 40px 5px;
+            background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(161,117,24,1) 100%);  
+            border-radius: 40px 5px 40px 5px;
             box-shadow: 8px 8px 8px rgba(201, 104, 13, 0.788);
             cursor:pointer;
         }
@@ -52,16 +56,16 @@
             border-radius: 4px;
             text-shadow: 5px 5px 20px rgb(15, 15, 15);
             margin-bottom: 10px;
+            font-family: 'Sansita Swashed', cursive;
         }
           .table1{
-              display:block;
-              padding:10px;
+              display: block;
+              padding: 10px 70px;
           }
           .table1 tr td{
               padding:10px;
           }
           input[type=text]{
-            //  background-color:rgb(75, 69, 69);
             background:transparent;
             width:200px;
             border-radius:3px;
@@ -74,9 +78,8 @@
           }
          
            input[type=password]{
-           //   background-color:rgb(75, 69, 69);
-                background:transparent;
-            width:200px;
+              background:transparent;
+              width:200px;
               border-radius:3px;
               border-bottom:3px solid rgb(255,165,0);
               border-left:none;
@@ -99,22 +102,29 @@
               font-size:18px;
           }
            #Button1{
-
-               border:2px solid white;
-               font-size:15px;
-               text-align:center;
-               margin-left:190px;
-               margin-top:20px;
-               border-radius:10px;
-               background-color:orange;
-               color:white;
+               height: 30px;
+               width: 150px;
+               border: 2px solid white;
+               font-size: 17px;
+               text-align: center;
+               margin-left: 208px;
+               margin-top: 20px;
+               border-radius: 10px;
+               background-color: orange;
+               color: white;
+               font-family: 'Baloo 2', cursive !important;
            }
            #label5{
                color:white;
                font-size:20px;
            }
         .auto-style1 {
-            width: 132px;
+            width: 194px;
+        }
+        ::-webkit-input-placeholder{
+            color:orange;
+            font-size:14px;
+            font-family:  'Sansita Swashed', cursive !important;
         }
     </style>
 </head>
@@ -127,7 +137,7 @@
             <table class="table1">
                 <tr>
                     <td class="auto-style1">
-                        <asp:Label ID="Label4" runat="server" Text="Customer_id :" Font-Italic="True" ToolTip="enter the customer-id"></asp:Label>
+                        <asp:Label ID="Label4" runat="server" Text="Customer_id " Font-Italic="True" ToolTip="enter the customer-id"></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="TextBox1" runat="server" Height="20px" placeholder="Enter CustomerID"></asp:TextBox>
@@ -140,7 +150,7 @@
                
                  <tr>
                     <td class="auto-style1">
-                        <asp:Label ID="Label1" runat="server" Text="Account No.:" ToolTip="enter account number" Font-Italic="True"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="Account No." ToolTip="enter account number" Font-Italic="True"></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="TextBox2" runat="server" Height="20px"  placeholder="Enter Account No."></asp:TextBox>
@@ -153,7 +163,7 @@
                 </tr>
                  <tr>
                     <td class="auto-style1">
-                        <asp:Label ID="Label2" runat="server" Text="Password:" Font-Italic="True" ToolTip="enter password"></asp:Label>
+                        <asp:Label ID="Label2" runat="server" Text="Password " Font-Italic="True" ToolTip="enter password"></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="TextBox3" runat="server"  Height="20px" TextMode="Password" placeholder="Enter password"></asp:TextBox>
@@ -166,7 +176,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style1">
-                        <asp:Label ID="Label3" runat="server" Text="Confirm Password :" Font-Italic="True" ToolTip="enter the conform password "></asp:Label>
+                        <asp:Label ID="Label3" runat="server" Text="Confirm Password " Font-Italic="True" ToolTip="enter the conform password "></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="TextBox4" runat="server" Height="20px" TextMode="Password" placeholder="Enter Confirm password"></asp:TextBox>
