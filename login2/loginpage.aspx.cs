@@ -16,7 +16,7 @@ namespace login2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            display();
+           // display();
 
         }
 
@@ -29,32 +29,34 @@ namespace login2
                 SqlCommand cmd = con.CreateCommand();
                 cmd.Parameters.AddWithValue("@userid", USERID.Text);
                 cmd.Parameters.AddWithValue("@Password", PASSWORD.Text);
-                cmd.CommandText = "Select count(*) from Cust_Register where customer_id='" + USERID.Text + "' and Password='" + PASSWORD.Text + "' ;";
+                cmd.CommandText = "Select count(*) from Cust_Register where customer_id=@userid  and Password=@Password ;";
                 int pass = (int)cmd.ExecuteScalar();
-                Response.Write(pass);
-                cmd.CommandText = "Select count(*) from Cust_Register where customer_id='" + USERID.Text + "' ;";
+              //  Response.Write(pass);
+                cmd.CommandText = "Select count(*) from Cust_Register where customer_id=@userid ;";
                 int check = (int)cmd.ExecuteScalar();
 
                 if (pass == 1 && check != 0)
                 {
 
-                    Response.Write("Login Successfully!");
+                    Label1.Text=("Login Successfully!");
+
+                    Response.Redirect("cust_after_login.aspx?custid="+ USERID.Text + "");
 
                 }
                 else if (check == 0)
                 {
-                    Response.Write("INVALID USERID");
+                    Label1.Text = ("INVALID USERID");
                 }
                 else
                 {
-                    Response.Write("Login declined! wrong Password");
+                    Label1.Text = ("Login declined! Wrong Password");
                 }
                 USERID.Text = "";
                 PASSWORD.Text = "";
             }
             catch
             {
-                Response.Write("Login Failed");
+                Label1.Text = ("Login Failed");
             }
             finally
             {
@@ -63,7 +65,11 @@ namespace login2
 
 
         }
-        void display()
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+            void display()
         {
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\registration_page.mdf;Integrated Security=True");
 

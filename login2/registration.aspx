@@ -6,6 +6,7 @@
 <head runat="server">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
     <title> REGRISTRATION PAGE</title>
     <style>
          *{
@@ -16,8 +17,10 @@
             width:100vw;
             height:100vh;
             background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-            background-image: linear-gradient(rgba(98, 102, 98, 0.6),rgba(98, 102, 98, 0.6)), url('../Images/backImg.jpg');
-            background-size:100% 100% ;
+          
+           background: rgb(242,209,124);
+background: radial-gradient(circle, rgba(242,209,124,1) 0%, rgba(54,219,219,1) 100%); 
+           background-size:100% 100% ;
             background-repeat: no-repeat;
             font-family: 'Baloo 2', cursive;
            }
@@ -57,14 +60,14 @@
             text-shadow: 5px 5px 20px rgb(15, 15, 15);
             margin-bottom: 10px;
             font-family: 'Sansita Swashed', cursive;
-        }
+        }/*
           .table1{
               display: block;
-              padding: 10px 70px;
+              
           }
-          .table1 tr td{
-              padding:10px;
-          }
+          .table1 tr{
+              margin:10px 0px;
+          }*/
           input[type=text]{
             background:transparent;
             width:200px;
@@ -89,18 +92,7 @@
               color:white;
           }
           
-          #Label1{
-              font-size:18px;
-          }
-          #Label2{
-              font-size:18px;
-          }    
-          #Label3{
-              font-size:18px;
-          }
-           #Label4{
-              font-size:18px;
-          }
+         
            #Button1{
                height: 30px;
                width: 150px;
@@ -119,22 +111,54 @@
                font-size:20px;
            }
         .auto-style1 {
-            width: 194px;
+            text-align:center;
+        }
+        .table td{
+            padding:0.6rem;
         }
         ::-webkit-input-placeholder{
             color:orange;
             font-size:14px;
             font-family:  'Sansita Swashed', cursive !important;
-        }
+        }.table1{
+             color:white;
+         }
+                .myButton {
+	box-shadow: 3px 4px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:15px;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:black!important;
+    font-weight:bold;
+	font-family:Arial;
+	font-size:13px;
+	padding:7px 25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+    margin:5px 10px;
+    width:172px;
+  
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="reg-box">
-            <img src="pngtree-business-male-icon-vector-png-image_916468.jpg" alt=""  class="user" />
+            <img src="../Images/usericon.jpg" alt=""  class="user" />
             <h2>Registration Form</h2>
             &nbsp;<br />
-            <table class="table1">
+            <table class="table1 table">
                 <tr>
                     <td class="auto-style1">
                         <asp:Label ID="Label4" runat="server" Text="Customer_id " Font-Italic="True" ToolTip="enter the customer-id"></asp:Label>
@@ -192,6 +216,10 @@
             <br />
             <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
         </div>
+        <div class="homebutton">
+                
+                <asp:Button ID="Button2" class="myButton" runat="server" Text="Back to Home Page" CausesValidation="False" PostBackUrl="homepage.aspx"/>
+            </div>
     </form>
 </body>
 </html>

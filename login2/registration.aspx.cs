@@ -31,8 +31,9 @@ namespace login2
                     cmd.Parameters.AddWithValue("@acc", TextBox2.Text);
                     cmd.Parameters.AddWithValue("@pass", TextBox3.Text);            
                     cmd.ExecuteNonQuery();
-                    Response.Write("succesfully");
-                    Server.Transfer("homepage.aspx");
+                    Label5.Text = "Successfully Registered!!";
+
+                  //  Server.Transfer("homepage.aspx");
 
                 }
                 catch
