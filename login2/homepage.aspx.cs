@@ -13,5 +13,19 @@ namespace login2
         {
 
         }
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("loginpage.aspx");
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("registration.aspx");
+        }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("CreateNewAccount.aspx");
+        }
     }
 }

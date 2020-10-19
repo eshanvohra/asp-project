@@ -7,34 +7,36 @@
     <title>Login Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@600&display=swap" rel="stylesheet"/>
+   
+ 
     <style type="text/css">
         @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
         body{
             padding: 0;
             margin:0;
             font-family: sans-serif;
-            background: rgb(238,174,202);
-            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-            background-image: linear-gradient(rgba(98, 102, 98, 0.6),rgba(98, 102, 98, 0.6)), url('../Images/Background.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
+         
+             background: rgb(242,209,124);
+            background: radial-gradient(circle, rgba(242,209,124,1) 0%, rgba(54,219,219,1) 100%);
+           
             font-family: 'Baloo 2', cursive;
         }
         .auto-style1{
             width:440px;
-            height:300px;
+            height:320px;
             position: absolute;
             top:50%;
-            left:70%;
+            left:50%;
             transform: translate(-50%,-50%);
             color: white;
             background-color: rgb(37, 36, 36);
+             background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(161,117,24,1) 100%);  
             box-shadow: 5px 5px 15px black;
             border-radius:30px 0px 30px 0px ;
         }
         .auto-style1 h1{
             font-size: 30px;
-            border-bottom: 3px solid #4caf50;
+            border-bottom: 3px solid orange;
             text-align: center;
             font-family: 'Sansita Swashed', cursive;
             margin-bottom: 50px;
@@ -55,7 +57,7 @@
             overflow: hidden;
             padding: 5px 0px;
             font-size: 20px;
-            border-bottom: 1px solid #4caf50;        
+            border-bottom: 2px solid orange ;        
         }
         
         .auto-style3 #USERID,.auto-style3 #PASSWORD{
@@ -115,11 +117,52 @@
          #GridView1{
              display:none;
          }
+          .landing::before{
+            content: ""; 
+            position: fixed;
+             top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+background: rgb(242,209,124);
+background: radial-gradient(circle, rgba(242,209,124,1) 0%, rgba(54,219,219,1) 100%);
+
+z-index:-1;
+
+
+}
+           .myButton {
+	box-shadow: 3px 4px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:15px;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:black!important;
+    font-weight:bold;
+	font-family:Arial;
+	font-size:13px;
+	padding:7px 25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+    margin:5px 10px;
+    width:172px;
+  
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        
+        <div class="landing">
         <div class="auto-style1">
             <h1>Login Form</h1>
             <table class="auto-style2">
@@ -128,10 +171,10 @@
                         <asp:ImageButton ID="ImageButton3" runat="server" Enabled="False" ImageUrl="../Images/nameicon.png" ToolTip="User ID" />
                         User ID </td>
                     <td class="auto-style3">
-                        <asp:TextBox ID="USERID" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="USERID" runat="server" Font-Size="Medium"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="USERID" Display="Dynamic" ErrorMessage="Please Enter User ID" ForeColor="Red" SetFocusOnError="True">Please Enter User ID</asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="USERID" Display="Dynamic" ErrorMessage="Please Enter User ID" ForeColor="Yellow" SetFocusOnError="True">Please Enter User ID</asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr class="styTr">
@@ -139,10 +182,10 @@
                         <asp:ImageButton ID="ImageButton4" runat="server" Enabled="False" ImageUrl="../Images/password11icon.png" ToolTip="Password" />
                         Password </td>
                     <td class="auto-style3">
-                        <asp:TextBox ID="PASSWORD" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="PASSWORD" runat="server" TextMode="Password" Font-Size="Medium"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="PASSWORD" Display="Dynamic" ErrorMessage="Please Enter Password" ForeColor="Red" SetFocusOnError="True">Please Enter Password</asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="PASSWORD" Display="Dynamic" ErrorMessage="Please Enter Password" ForeColor="Yellow" SetFocusOnError="True">Please Enter Password</asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr class="styTr">
@@ -150,10 +193,16 @@
                         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Sign In" />
                         <asp:GridView ID="GridView1" runat="server">
                         </asp:GridView>
+                        <asp:Label ID="Label1" runat="server"></asp:Label>
                     </td>
                 </tr>
             </table>
         </div>
+            <div class="homebutton">
+                
+                <asp:Button ID="Button2" class="myButton" runat="server" Text="Back to Home Page" CausesValidation="False" PostBackUrl="homepage.aspx"/>
+            </div>
+            </div>
     </form>
 </body>
 </html>
