@@ -214,11 +214,49 @@ text-transform: capitalize;
             display:block;
             margin:61px 0px;
         }
+        #loading{            /*loader starts*/
+            display:flex;
+            width:100%;
+            height:100vh;
+            z-index:9999999;
+            position:absolute;
+            justify-content:center;
+            align-items:center;
+            background: #fff no-repeat;
+         }
+         #ring{
+            width:300px;
+            height:300px;
+            border-radius:50%;
+            box-shadow:0 4px 0 #262626;
+            background:transparent;
+            animation: animate 1s linear infinite;
+         }
 
+        @keyframes animate{
+            0%{
+                transform:rotate(0 deg);
+            }
+            100%{
+                transform:rotate(360deg);
+            }
+        }
+        #text1{
+            margin-left:-50px;
+            color:black;
+            font-family:Verdana;
+            font-size:20px;
+            font-weight:800;
+            margin-left:-180px;
+        }       /* loader ends */
     </style>
 </head>
-<body>
+<body onload="myfunction()">
     <form id="form1" runat="server">
+         <div id="loading">
+            <div id="ring"></div>
+             <div id="text1">LOADING</div>
+     </div>
         <div class="top">
             <nav class="navbar navbar-expand-lg stick">
   <a class="navbar-brand" href="#"><img src="logonewnew.png" /></a>
@@ -343,5 +381,11 @@ text-transform: capitalize;
 
     <!-- ********************footer ends**************** -->
     </form>
+    <script>
+        var preloader = document.getElementById('loading');
+        function myfunction() {
+            preloader.style.display = 'none';
+        }
+    </script>
 </body>
 </html>

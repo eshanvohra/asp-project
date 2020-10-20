@@ -6,19 +6,10 @@
     <title></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@700&display=swap" rel="stylesheet"/>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"/>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     <style>
        *{
             padding:0;
@@ -107,23 +98,60 @@
             left: 0;
             width: 100%;
             height: 100%;
-background: rgb(242,209,124);
-background: radial-gradient(circle, rgba(242,209,124,1) 0%, rgba(54,219,219,1) 100%);
-
-z-index:-1;
-
-
+            background: rgb(242,209,124);
+            background: radial-gradient(circle, rgba(242,209,124,1) 0%, rgba(54,219,219,1) 100%);
+            z-index:-1;
 }
         .buttons{
-               
-                    margin-top: 197px;
-    display: flex;
-    justify-content: center;
+                  margin-top: 197px;
+                  display: flex;
+                  justify-content: center;
         }
+        #loading{            /*loader starts*/
+            display:flex;
+            width:100%;
+            height:100vh;
+            z-index:9999999;
+            position:absolute;
+            justify-content:center;
+            align-items:center;
+            background: #fff no-repeat;
+         }
+         #ring{
+            width:300px;
+            height:300px;
+            border-radius:50%;
+            box-shadow:0 4px 0 #262626;
+            background:transparent;
+            animation: animate 1s linear infinite;
+         }
+
+        @keyframes animate{
+            0%{
+                transform:rotate(0 deg);
+            }
+            100%{
+                transform:rotate(360deg);
+            }
+        }
+        #text1{
+            margin-left:-50px;
+            color:black;
+            font-family:Verdana;
+            font-size:20px;
+            font-weight:800;
+            margin-left:-180px;
+        }       /* loader ends */
     </style>
 </head>
-<body>
+<body onload="myfunction()" >
+    
     <form id="form1" runat="server">
+     <div id="loading">
+            <div id="ring"></div>
+             <div id="text1">LOADING</div>
+     </div>
+
    <div class="top">
             <nav class="navbar navbar-expand-lg stick">
   <a class="navbar-brand" href="#"><img src="logonewnew.png" /></a>
@@ -144,8 +172,6 @@ z-index:-1;
 </nav>
             </div>
             <div class="landing">
-
-          
         <div id="ImageSlider" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators imp">
             <li data-target="#ImageSlider" class="bg-info active" data-slide-to="0"></li>
@@ -190,7 +216,12 @@ z-index:-1;
           <asp:Button ID="Button6" class="mainButtons" runat="server"  Text="Open new Account" OnClick="Button6_Click"/>
    </div>
                 </div>
-
             </form>
+    <script>
+        var preloader = document.getElementById('loading');
+        function myfunction() {
+            preloader.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
