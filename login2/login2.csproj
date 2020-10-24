@@ -76,6 +76,7 @@
     <Content Include="cust_after_login.aspx" />
     <Content Include="homepage.aspx" />
     <Content Include="loginpage.aspx" />
+    <Content Include="OurTeam.aspx" />
     <Content Include="registration.aspx" />
     <Content Include="pngtree-business-male-icon-vector-png-image_916468.jpg" />
     <Content Include="UpdateProfile.aspx" />
@@ -116,6 +117,13 @@
     </Compile>
     <Compile Include="loginpage.aspx.designer.cs">
       <DependentUpon>loginpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OurTeam.aspx.cs">
+      <DependentUpon>OurTeam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OurTeam.aspx.designer.cs">
+      <DependentUpon>OurTeam.aspx</DependentUpon>
     </Compile>
     <Compile Include="registration.aspx.cs">
       <DependentUpon>registration.aspx</DependentUpon>
