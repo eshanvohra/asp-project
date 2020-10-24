@@ -275,7 +275,7 @@ text-transform: capitalize;
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-link active " href="#"><i class="fa fa-home" aria-hidden="true" ></i>Home <span class="sr-only">(current)</span></a>
-      <a class="nav-link " href="#"><i class="fa fa-users"></i>About Us</a>
+      <asp:HyperLink runat="server" NavigateUrl="AboutUs.aspx" class="nav-link "><i class="fa fa-users"></i>About Us</asp:HyperLink>
       <a class="nav-link " href="#"><i class="fa fa-book"></i>Our Policies</a>
       <a class="nav-link " href="#"><i class="fa fa-exchange"></i>Transactions</a>
       <a class="nav-link " href="#"><i class="fa fa-address-book"></i>Reach Us</a>
