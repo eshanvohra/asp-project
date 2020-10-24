@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AboutUs.aspx" />
     <Content Include="App_Data\registration_page.mdf" />
     <Content Include="App_Data\registration_page_log.ldf">
       <DependentUpon>registration_page.mdf</DependentUpon>
@@ -81,6 +82,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateNewAccount.aspx.cs">
       <DependentUpon>CreateNewAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
