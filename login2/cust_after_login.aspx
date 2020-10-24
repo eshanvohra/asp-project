@@ -153,15 +153,100 @@ text-transform: capitalize;
             font-size:20px;
             font-weight:800;
             margin-left:-180px;
-        }       /* loader ends */
+        }
+        .loader {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            border: 3px solid;
+            border-color: rgba(54,219,219,1) rgba(54,219,219,1) transparent;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+            }
+            .loader::after {
+            content: '';  
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
+            right: 0;
+            padding:5px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border: 3px solid;
+            border-color: transparent rgba(242,209,124,1) rgba(242,209,124,1);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            animation: rotationBack 0.5s linear infinite;
+            transform-origin: center center;
+            }
+
+            @keyframes rotation {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+                } 
+                    
+                @keyframes rotationBack {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(-360deg);
+                }
+            }
+                /*For Loading*/
+            .loader1 {
+            font-size: 28px;
+            padding-left:5px;
+            display: inline-block;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: #263238;
+            box-sizing: border-box;
+            text-shadow: 0 0 2px #FFF, 0 0 1px #FFF, 0 0 1px #FFF;
+            letter-spacing: 2px;
+            position: relative;
+            }
+            .loader1::after {
+            content: 'Loading';
+            position: absolute;
+            left: 5px;
+            top: 0;
+            color: rgba(54,219,219,1);
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            box-sizing: border-box;
+            animation: animloader 2s linear infinite;
+            }
+
+            @keyframes animloader {
+                0% {
+                    width: 0%;
+                }
+                100% {
+                    width: 100%;
+                }
+            }
+        /* loader ends */
     </style>
 </head>
 <body onload="myfunction()">
     <form id="form1" runat="server">
          <div id="loading">
-            <div id="ring"></div>
-             <div id="text1">LOADING</div>
-     </div>
+            <!--<div id="ring"></div>
+             <div id="text1">LOADING</div>-->
+            <span class="loader"></span>
+            <span></span>
+            <span class="loader1">Loading</span>
+         </div>
          <div class="top">
             <nav class="navbar navbar-expand-lg stick">
   <a class="navbar-brand" href="#"><img src="logonewnew.png" /></a>
