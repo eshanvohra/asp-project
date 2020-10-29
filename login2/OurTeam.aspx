@@ -225,6 +225,14 @@ h4{
      top: 0;
      margin: 0;
         }
+        .progress{
+                height: 22px;
+                margin: 0px 60px;
+        }
+        .growthSection{
+            padding-top:25px;
+            padding-bottom:50px;
+        }
    </style>
 	
 </head>
@@ -357,18 +365,52 @@ h4{
         </div>
 
     </section>
+        <div class="bg-light">
 		 <div class="growthSection container">
-             <h1>Our Growth</h1>
-             <div id="year ">
-                 <h3>2019 :</h3>
+             <h1 class="text-center font-weight-bold" style="font-size:4rem">Our Growth</h1>
+             <div class="year ">
+                 <h3 style="font-size:3rem">2020 :</h3>
               
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%">100%</div>
+                        <div class="progress" style="height:22px;">
+                            <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" role="progressbar"
+                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"  style="width: 90%;height: 250px">100%</div>
+                        </div>
+             </div><br />
+             <div class="year ">
+                 <h3 style="font-size:3rem">2019 :</h3>
+              
+                        <div class="progress" style="height:22px;">
+                            <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar"
+                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"  style="width: 80%;height: 250px">100%</div>
+                        </div>
+             </div><br />
+             <div class="year ">
+                 <h3 style="font-size:3rem">2018 :</h3>
+              
+                        <div class="progress" style="height:22px;">
+                            <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar"
+                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"  style="width: 70%;height: 250px">100%</div>
+                        </div>
+             </div><br />
+             <div class="year ">
+                 <h3 style="font-size:3rem">2017 :</h3>
+              
+                        <div class="progress" style="height:22px;">
+                            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar"
+                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"  style="width: 60%;height: 250px">100%</div>
+                        </div>
+             </div><br />
+             <div class="year ">
+                 <h3 style="font-size:3rem">2016 :</h3>
+              
+                        <div class="progress" style="height:22px;">
+                            <div class="progress-bar bg-dark progress-bar-striped progress-bar-animated" role="progressbar"
+                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"  style="width: 55%;height: 250px">100%</div>
                         </div>
              </div>
+
 		 </div>
-          
+          </div>
     </form>
     <script>
         var preloader = document.getElementById('loading');
