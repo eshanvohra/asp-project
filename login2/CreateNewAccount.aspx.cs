@@ -74,7 +74,7 @@ namespace login2
             {
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
-       
+
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "insert into cust_profile values(@name,@dob,@actype," +
                     "@mob,@email,@address,@aadhar,@pan,@custid,@account)";
@@ -89,10 +89,8 @@ namespace login2
                 cmd.Parameters.AddWithValue("@custid", custid);
                 cmd.Parameters.AddWithValue("@account", account);
                 cmd.ExecuteNonQuery();
-               
                 TextAccount.Text = "36547" + (number);
                 TextCust.Text = "ESB" + n;
-                
             }
             catch(Exception ex)
             {

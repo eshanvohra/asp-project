@@ -74,6 +74,7 @@
     </Content>
     <Content Include="CreateNewAccount.aspx" />
     <Content Include="cust_after_login.aspx" />
+    <Content Include="electricty_pay.aspx" />
     <Content Include="homepage.aspx" />
     <Content Include="loginpage.aspx" />
     <Content Include="OurTeam.aspx" />
@@ -103,6 +104,13 @@
     </Compile>
     <Compile Include="cust_after_login.aspx.designer.cs">
       <DependentUpon>cust_after_login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="electricty_pay.aspx.cs">
+      <DependentUpon>electricty_pay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="electricty_pay.aspx.designer.cs">
+      <DependentUpon>electricty_pay.aspx</DependentUpon>
     </Compile>
     <Compile Include="homepage.aspx.cs">
       <DependentUpon>homepage.aspx</DependentUpon>
