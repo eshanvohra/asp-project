@@ -469,7 +469,8 @@ a {
         <p>
             &nbsp;</p>
             <p>
-                &nbsp;</p>
+                <asp:Label ID="Label1" runat="server"></asp:Label>
+        </p>
             <p class="container text-center">
             <asp:Button ID="Button1" class="myButton" runat="server" CausesValidation="False" Text="Back to Home" OnClick="Button1_Click" />
                 <asp:Button ID="Button2" class="myButton" runat="server" Text="Check" OnClick="Button2_Click"  />
