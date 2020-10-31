@@ -101,6 +101,35 @@ namespace login2
             {
                 con.Close();
             }
+            //adding entry to Account_Details table
+            try
+            {
+
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@accountno", account);
+                cmd.Parameters.AddWithValue("@custid", custid);
+                cmd.Parameters.AddWithValue("@amt", "5000");
+                
+
+                cmd.CommandText = "Insert into Account_Details values (@custid,@accountno,@amt)";
+          
+                cmd.ExecuteNonQuery();
+
+                Label1.Text = "Added entry to Account_Details table";
+
+            }
+
+            catch (Exception ex)
+            {
+                Label1.Text = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+
         }
     }
 }
