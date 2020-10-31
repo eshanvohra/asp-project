@@ -258,7 +258,7 @@ text-transform: capitalize;
       <a class="nav-link active " href="#"><i class="fa fa-home" aria-hidden="true" ></i>Home <span class="sr-only">(current)</span></a>
       <a class="nav-link " href="#"><i class="fa fa-users"></i>About Us</a>
       <a class="nav-link " href="#"><i class="fa fa-book"></i>Our Policies</a>
-      <a class="nav-link " href="#"><i class="fa fa-exchange"></i>Transactions</a>
+    
       <a class="nav-link " href="#"><i class="fa fa-address-book"></i>Reach Us</a>
       <a class="nav-link " href="#"><i class="fa fa-question-circle"></i>Queries & Suggestions</a>
         
@@ -275,6 +275,7 @@ text-transform: capitalize;
 
             <asp:Button ID="Button1" class="mainButtons" runat="server" Text="Deactivate UserID" OnClick="Button1_Click"  />
             <asp:Button ID="Button2" class="mainButtons"  runat="server" Text="Update Profile" OnClick="Button2_Click" />
+            <asp:Button ID="Button4" class="mainButtons"  runat="server" Text="Transactions" OnClick="Button4_Click" />
                      <asp:Button ID="Button3" class="mainButtons" runat="server" Text="Back to Home Page" CausesValidation="False" PostBackUrl="homepage.aspx" Visible="false"/>
         <br />
         <br />
