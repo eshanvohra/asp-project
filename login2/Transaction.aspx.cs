@@ -21,7 +21,7 @@ namespace login2
         static int transactionamount;
         static string date = DateTime.Now.ToString();
         string custid = "ESB45367";
-
+        string receivercustid = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             /*  string name = Request.QueryString["custid"];
@@ -295,7 +295,7 @@ namespace login2
             }
 
 
-            //entry of credit in all_Transactions table
+            //entry of credit (senderside) in all_Transactions table
             try
             {
 
@@ -307,9 +307,10 @@ namespace login2
                 cmd.Parameters.AddWithValue("@amount", transactionamount);
                 cmd.Parameters.AddWithValue("@custid", custid);
                 cmd.Parameters.AddWithValue("@date", date);
+                cmd.Parameters.AddWithValue("@transactiontype", "DEBIT");
 
 
-                cmd.CommandText = "insert into All_Transactions values (@custid,@creditaccount,@debitaccount,@date,@amount)";
+                cmd.CommandText = "insert into All_Transactions_New values (@custid,@creditaccount,@debitaccount,@date,@amount,@transactiontype)";
 
 
                 cmd.ExecuteNonQuery();
@@ -324,6 +325,71 @@ namespace login2
             {
                 con.Close();
             }
+
+            //getting receiver's cust id for adding entry to all_transactions table
+            try
+            {
+
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+
+
+                cmd.Parameters.AddWithValue("@receiveract", RecAccount.Text);
+                receiveraccount = RecAccount.Text;
+                cmd.CommandText = "Select Cust_ID from Account_Details where Account_No=@receiveract";
+
+                string s = "sender";
+
+                SqlDataReader r = cmd.ExecuteReader();
+                if (r.Read())
+                {
+                    s = r.GetString(0);
+                }
+  //              Label6.Text = "Receiver's cust id " + s;
+
+                receivercustid = s;
+
+
+            }
+            catch (Exception ex)
+            {
+                Label6.Text = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+            //entry of receiverside in all_Transactions table
+            try
+            {
+
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@creditaccount", receiveraccount);
+                cmd.Parameters.AddWithValue("@debitaccount", senderaccount);
+                cmd.Parameters.AddWithValue("@amount", transactionamount);
+                cmd.Parameters.AddWithValue("@custid", receivercustid);
+                cmd.Parameters.AddWithValue("@date", date);
+                cmd.Parameters.AddWithValue("@transactiontype", "CREDIT");
+
+
+                cmd.CommandText = "insert into All_Transactions_New values (@custid,@creditaccount,@debitaccount,@date,@amount,@transactiontype)";
+
+
+                cmd.ExecuteNonQuery();
+                Label6.Text = "Added entry to receiver side all_transactionstable";
+            }
+
+            catch (Exception ex)
+            {
+                Label6.Text = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+
 
         }
     }
