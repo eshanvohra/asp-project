@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Drawing;
+using System.Web.SessionState;
 
 namespace login2
 {
@@ -14,6 +16,12 @@ namespace login2
     {
         SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename =|DataDirectory|\registration_page.mdf; Integrated Security = True");
         static int balancecheck ;
+        static string receiveraccount;
+        static string senderaccount;
+        static int transactionamount;
+        static string date = DateTime.Now.ToString();
+        string custid = "ESB45367";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             /*  string name = Request.QueryString["custid"];
@@ -21,6 +29,7 @@ namespace login2
 
               */
             Button2.Visible = false;
+            Response.Write(date);
         }
      
         protected void Button1_Click(object sender, EventArgs e)
@@ -64,12 +73,12 @@ namespace login2
             // for getting sender's name
             try
             {
-                string name = "ESB45367";
+                
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
               
               
-                cmd.Parameters.AddWithValue("@senderid", name);
+                cmd.Parameters.AddWithValue("@senderid", custid);
               
                 cmd.CommandText = "Select Name from cust_profile where Cust_ID=@senderid";
                 
@@ -104,7 +113,7 @@ namespace login2
                 SqlCommand cmd = con.CreateCommand();
 
 
-                cmd.Parameters.AddWithValue("@senderid", name);
+                cmd.Parameters.AddWithValue("@senderid", custid);
 
                 cmd.CommandText = "Select Balance from Account_Details where Cust_ID=@senderid";
 
@@ -147,10 +156,43 @@ namespace login2
                 Button2.Visible = true;
                 AmountToSend.Text = Amount.Text;
             }
-          
-           
 
+            receiveraccount = RecAccount.Text;
+            transactionamount = Convert.ToInt32(Amount.Text);
             
+            //for getting senderaccount
+            // for getting sender's name
+            try
+            {
+
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+
+
+                cmd.Parameters.AddWithValue("@senderid", custid);
+
+                cmd.CommandText = "Select Account_No from cust_profile where Cust_ID=@senderid";
+
+                string s = "sender";
+
+                SqlDataReader r = cmd.ExecuteReader();
+                if (r.Read())
+                {
+                    s = r.GetString(0);
+                }
+
+                senderaccount = s;
+
+            }
+            catch (Exception ex)
+            {
+                Label1.Text = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -164,7 +206,7 @@ namespace login2
             cmd.CommandType = CommandType.Text;
 
             cmd.CommandText = "Update Account_Details set Balance=@amounttosend where Cust_ID=@senderid";
-            cmd.Parameters.AddWithValue("@senderid", name);
+            cmd.Parameters.AddWithValue("@senderid", custid);
             balancecheck = balancecheck - Convert.ToInt32(AmountToSend.Text);
             string amt = Convert.ToString(balancecheck);
 
@@ -197,7 +239,7 @@ namespace login2
 
 
                 cmd.Parameters.AddWithValue("@receiveract", RecAccount.Text);
-
+                receiveraccount = RecAccount.Text;
                 cmd.CommandText = "Select Balance from Account_Details where Account_No=@receiveract";
 
                 string s = "sender";
@@ -251,6 +293,38 @@ namespace login2
             {
                 con.Close();
             }
+
+
+            //entry of credit in all_Transactions table
+            try
+            {
+
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@creditaccount", receiveraccount);
+                cmd.Parameters.AddWithValue("@debitaccount", senderaccount);
+                cmd.Parameters.AddWithValue("@amount", transactionamount);
+                cmd.Parameters.AddWithValue("@custid", custid);
+                cmd.Parameters.AddWithValue("@date", date);
+
+
+                cmd.CommandText = "insert into All_Transactions values (@custid,@creditaccount,@debitaccount,@date,@amount)";
+
+
+                cmd.ExecuteNonQuery();
+                Label6.Text = "Added entry to all_transactionstable";
+            }
+
+            catch (Exception ex)
+            {
+                Label6.Text = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+
         }
     }
 }

@@ -35,7 +35,7 @@
                 <tr>
                     <td>Recipient&#39;s Account No: </td>
                     <td>
-                        <asp:TextBox ID="RecAccount" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="RecAccount" runat="server" Height="25px"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -108,6 +108,7 @@
             <asp:Label ID="Label3" runat="server"></asp:Label>
 &nbsp;<asp:Label ID="Label4" runat="server"></asp:Label>
             <asp:Label ID="Label5" runat="server"></asp:Label>
+            <asp:Label ID="Label6" runat="server"></asp:Label>
         </p>
     </form>
 </body>
