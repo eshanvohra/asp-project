@@ -452,15 +452,12 @@ namespace login2
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@custid", custid);
-                cmd.CommandText = "select * from All_Transactions_New where cust_id=@custid";
-                //SqlDataReader r = cmd.ExecuteReader();
-                SqlDataAdapter sa = new SqlDataAdapter(cmd);
-                //GridView1.DataSource = r;
-                //GridView1.DataBind();
-                DataTable dt = new DataTable();
-                sa.Fill(dt);
-                DataList1.DataSource = dt;
-                DataList1.DataBind();
+                cmd.CommandText = "select Credit_Account_No, Amount,Transaction_Date,Transaction_Type,Transaction_Details  from All_Transactions_New where cust_id=@custid";
+                SqlDataReader r = cmd.ExecuteReader();
+                
+                GridView1.DataSource = r;
+                GridView1.DataBind();
+
             }
 
             catch (Exception ex)
@@ -473,5 +470,7 @@ namespace login2
             }
 
         }
+
+     
     }
 }
