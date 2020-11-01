@@ -9,6 +9,8 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Drawing;
 using System.Web.SessionState;
+using System.Net;
+using System.Net.Mail;
 
 namespace login2
 {
@@ -20,8 +22,12 @@ namespace login2
         static string senderaccount;
         static int transactionamount;
         static string date = DateTime.Now.ToString();
-        string custid = "ESB45367";
+        string custid = "ESB14785";
         string receivercustid = "";
+        static string receiverEmailId = "";
+        static string senderEmailId = "";
+        static string receiverName = "";
+        static string senderName = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             /*  string name = Request.QueryString["custid"];
@@ -43,23 +49,23 @@ namespace login2
                 string receipient = RecAccount.Text;
                 cmd.Parameters.AddWithValue("@receiveraccount", receipient);
             
-                cmd.CommandText = "Select Name from cust_profile where Account_No=@receiveraccount";
+                cmd.CommandText = "Select Name,Email from cust_profile where Account_No=@receiveraccount";
        
                 
      
                 string rec = "receiver";
+                string recId = "123";
                 SqlDataReader r = cmd.ExecuteReader();
                 if (r.Read())
                 {
                     rec = r.GetString(0);
+                    recId = r.GetString(1);
                 }  
-                if (r.Read())
-                {
-                    rec = r.GetString(1);
-                }
 
                 Receivername.Text = rec;
-
+                receiverName = rec;
+                receiverEmailId = recId;
+                Response.Write(receiverEmailId);
             }
             catch (Exception ex)
             {
@@ -70,7 +76,7 @@ namespace login2
                 con.Close();
 
             } 
-            // for getting sender's name
+            // for getting sender's name and Email
             try
             {
                 
@@ -80,19 +86,23 @@ namespace login2
               
                 cmd.Parameters.AddWithValue("@senderid", custid);
               
-                cmd.CommandText = "Select Name from cust_profile where Cust_ID=@senderid";
+                cmd.CommandText = "Select Name,Email from cust_profile where Cust_ID=@senderid";
                 
                 string s="sender";
+                string sId="123";
             
                 SqlDataReader r = cmd.ExecuteReader();
                 if (r.Read())
                 {
                     s = r.GetString(0);
-                }  
-               
+                    sId = r.GetString(1);
+                }
+                               
 
                 Sendername.Text = s;
-
+                senderName = s;
+                senderEmailId = sId;
+                Response.Write(senderEmailId);
             }
             catch (Exception ex)
             {
@@ -308,9 +318,11 @@ namespace login2
                 cmd.Parameters.AddWithValue("@custid", custid);
                 cmd.Parameters.AddWithValue("@date", date);
                 cmd.Parameters.AddWithValue("@transactiontype", "DEBIT");
+                cmd.Parameters.AddWithValue("@firmname",Firm.Text);
+                cmd.Parameters.AddWithValue("@transactiondetails",Details.Text);
 
 
-                cmd.CommandText = "insert into All_Transactions_New values (@custid,@creditaccount,@debitaccount,@date,@amount,@transactiontype)";
+                cmd.CommandText = "insert into All_Transactions_New values (@custid,@creditaccount,@debitaccount,@date,@amount,@transactiontype,@firmname,@transactiondetails)";
 
 
                 cmd.ExecuteNonQuery();
@@ -372,9 +384,11 @@ namespace login2
                 cmd.Parameters.AddWithValue("@custid", receivercustid);
                 cmd.Parameters.AddWithValue("@date", date);
                 cmd.Parameters.AddWithValue("@transactiontype", "CREDIT");
+                cmd.Parameters.AddWithValue("@firmname", Firm.Text);
+                cmd.Parameters.AddWithValue("@transactiondetails", Details.Text);
 
 
-                cmd.CommandText = "insert into All_Transactions_New values (@custid,@creditaccount,@debitaccount,@date,@amount,@transactiontype)";
+                cmd.CommandText = "insert into All_Transactions_New values (@custid,@creditaccount,@debitaccount,@date,@amount,@transactiontype,@firmname,@transactiondetails)";
 
 
                 cmd.ExecuteNonQuery();
@@ -389,7 +403,74 @@ namespace login2
             {
                 con.Close();
             }
+            //For receiver
+            string subject = "Credit Alert!!!!";
+            string body = "Your Account Number "+receiveraccount+" is credited by "+transactionamount;
+            string salutation = "Dear "+receiverName+",\n";
+            int l= sendEmail(subject,body, salutation, receiverEmailId);
+            Response.Write(l);
+            //For sender
+            subject = "Debit Alert!!!!";
+            body = "Your Account Number " + senderaccount + " is debited by " + transactionamount;
+            salutation = "Dear " + senderName + ",\n";
+            l = sendEmail(subject, body, salutation, senderEmailId);
+            Response.Write(l);
+        }
+            //Sending Email Function
+          public static int sendEmail(string subject,string body,string name,string recieverEmail)
+        {
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new System.Net.NetworkCredential("esmartbanker@gmail.com", "thisisapwdesb");
+            smtp.EnableSsl = true;
+            MailMessage msg = new MailMessage();
+            msg.Subject = subject;
+            msg.Body = name + "\n " + body;
+            string toaddress = recieverEmail;
+            msg.To.Add(toaddress);
+            string fromaddress = "eSmartBanker <esmartbanker@gmail.com>";
+            msg.From = new MailAddress(fromaddress);
+            try
+            {
+                smtp.Send(msg);
+                return 1;
 
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@custid", custid);
+                cmd.CommandText = "select * from All_Transactions_New where cust_id=@custid";
+                //SqlDataReader r = cmd.ExecuteReader();
+                SqlDataAdapter sa = new SqlDataAdapter(cmd);
+                //GridView1.DataSource = r;
+                //GridView1.DataBind();
+                DataTable dt = new DataTable();
+                sa.Fill(dt);
+                DataList1.DataSource = dt;
+                DataList1.DataBind();
+            }
+
+            catch (Exception ex)
+            {
+                Label6.Text = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
 
         }
     }
