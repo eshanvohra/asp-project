@@ -70,6 +70,7 @@
     <Content Include="AboutUs.aspx" />
     <Content Include="AdminLogin.aspx" />
     <Content Include="AdminPage.aspx" />
+    <Content Include="after elect.aspx" />
     <Content Include="App_Data\registration_page.mdf" />
     <Content Include="App_Data\registration_page_log.ldf">
       <DependentUpon>registration_page.mdf</DependentUpon>
@@ -107,6 +108,13 @@
     </Compile>
     <Compile Include="AdminPage.aspx.designer.cs">
       <DependentUpon>AdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="after elect.aspx.cs">
+      <DependentUpon>after elect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="after elect.aspx.designer.cs">
+      <DependentUpon>after elect.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateNewAccount.aspx.cs">
       <DependentUpon>CreateNewAccount.aspx</DependentUpon>

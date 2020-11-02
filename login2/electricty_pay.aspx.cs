@@ -13,5 +13,17 @@ namespace login2
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (DropDownList1.SelectedValue == "")
+            {
+                Label1.Text = "Please select your city";
+            }
+            else
+            { 
+                Response.Redirect("after elect.aspx?state=" + DropDownList1.SelectedValue);
+            }
+        }
     }
 }

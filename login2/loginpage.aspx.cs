@@ -62,8 +62,6 @@ namespace login2
             {
                 con.Close();
             }
-
-
         }
         protected void Button2_Click(object sender, EventArgs e)
         {
@@ -72,7 +70,6 @@ namespace login2
             void display()
         {
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\registration_page.mdf;Integrated Security=True");
-
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             //cmd.CommandType = CommandType.Text;
