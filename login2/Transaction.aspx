@@ -75,7 +75,9 @@
             <asp:Label ID="Label2" runat="server"></asp:Label>
         </p>
         <p>
-            &nbsp;</p>
+            <asp:Label ID="Label8" runat="server" Text="Label"></asp:Label>
+&nbsp;<asp:Label ID="Label9" runat="server" Text="Label"></asp:Label>
+        </p>
         <table class="auto-style1">
             <tr>
                 <td>Sender&#39;s Name:</td>
@@ -107,9 +109,16 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="Label3" runat="server"></asp:Label>
 &nbsp;<asp:Label ID="Label4" runat="server"></asp:Label>
-            <asp:Label ID="Label5" runat="server"></asp:Label>
+            <asp:Label ID="Label5" runat="server" Visible="False"></asp:Label>
             <asp:Label ID="Label6" runat="server"></asp:Label>
+            <asp:GridView ID="GridView1" runat="server">
+            </asp:GridView>
+            <asp:DataList ID="DataList1" runat="server"></asp:DataList>
         </p>
+        <p>
+            <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Button" />
+        </p>
+        <asp:Label ID="Label7" runat="server"></asp:Label>
     </form>
 </body>
 </html>
