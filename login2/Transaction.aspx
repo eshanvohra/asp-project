@@ -165,13 +165,15 @@
         </table>
            </div>
       
+        
+   <asp:Label ID="Label3" runat="server"></asp:Label>
+      
                     <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Confirm" Visible="False" ValidationGroup="otp" />
                
       
             <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Account Statement" />
                
         
-   <asp:Label ID="Label3" runat="server"></asp:Label>
 <asp:Label ID="Label4" runat="server"></asp:Label>
             <asp:Label ID="Label5" runat="server" Visible="False"></asp:Label>
             <asp:Label ID="Label6" runat="server"></asp:Label>
@@ -220,6 +222,7 @@
                 </ItemTemplate>
                 <SelectedItemStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
             </asp:DataList>
+               
               </div>  
            <!--   <asp:GridView ID="GridView1" runat="server"></asp:GridView>
               -->

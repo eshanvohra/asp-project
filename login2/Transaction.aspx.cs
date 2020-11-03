@@ -31,11 +31,11 @@ namespace login2
         static int OTP;
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*  string name = Request.QueryString["custid"];
-              name = "ESB45367";
+              string name = Request.QueryString["custid"];
 
-              */
-            Button2.Visible = false;
+            custid = name;
+             
+           
             //  Response.Write(date);
     //        detailstable.Visible = false;
         }
@@ -228,7 +228,7 @@ namespace login2
                 try
                 {
                   //  Label1.Text = balancecheck.ToString();
-                    string name = "ESB45367";
+                  //  string name = "ESB45367";
                     con.Open();
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
@@ -410,7 +410,7 @@ namespace login2
 
 
                     cmd.ExecuteNonQuery();
-                    Label6.Text = "Added entry to receiver side all_transactionstable";
+                   // Label6.Text = "Added entry to receiver side all_transactionstable";
                 }
 
                 catch (Exception ex)
@@ -436,7 +436,8 @@ namespace login2
             }
             else
             {
-                OTPTextBox.Text = "INVALID OTP. PLS TRY AGAIN";
+               // OTPTextBox.Text = "INVALID OTP. PLS TRY AGAIN";
+                Label3.Text = "INVALID OTP. PLS TRY AGAIN";
             }
         }
             //Sending Email Function
