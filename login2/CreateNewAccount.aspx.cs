@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Net.Sockets;
+using System.Net;
+using System.Net.Mail;
 
 namespace login2
 {
@@ -58,7 +60,33 @@ namespace login2
             int number = rand.Next(100000);
             TextAccount.Text = "36547" + (number);
         }
-        
+        //Sending Email Function
+        public static int sendEmail(string subject, string body, string name, string recieverEmail)
+        {
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new System.Net.NetworkCredential("esmartbanker@gmail.com", "thisisapwdesb");
+            smtp.EnableSsl = true;
+            MailMessage msg = new MailMessage();
+            msg.Subject = subject;
+            msg.Body = name + "\n " + body;
+            string toaddress = recieverEmail;
+            msg.To.Add(toaddress);
+            string fromaddress = "eSmartBanker <esmartbanker@gmail.com>";
+            msg.From = new MailAddress(fromaddress);
+            try
+            {
+                smtp.Send(msg);
+                return 1;
+
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
         protected void Button2_Click(object sender, EventArgs e)
         {
             Random rand = new Random();
@@ -92,6 +120,7 @@ namespace login2
                
                 TextAccount.Text = "36547" + (number);
                 TextCust.Text = "ESB" + n;
+              //  sendEmail(subject,body,)
                 
             }
             catch(Exception ex)
