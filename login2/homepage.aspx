@@ -276,9 +276,10 @@ text-transform: capitalize;
     <div class="navbar-nav">
       <a class="nav-link active " href="#"><i class="fa fa-home" aria-hidden="true" ></i>Home <span class="sr-only">(current)</span></a>
       <asp:HyperLink runat="server" NavigateUrl="AboutUs.aspx" class="nav-link "><i class="fa fa-users"></i>About Us</asp:HyperLink>
-      <a class="nav-link " href="#"><i class="fa fa-book"></i>Our Policies</a>
-      <a class="nav-link " href="#"><i class="fa fa-exchange"></i>Transactions</a>
-      <a class="nav-link " href="#"><i class="fa fa-address-book"></i>Reach Us</a>
+      <a class="nav-link " href="#" ><i class="fa fa-book"></i>Our Policies</a>
+    <asp:HyperLink runat="server" NavigateUrl="AdminLogin.aspx" class="nav-link "><i class="fa fa-users"></i>Admin Login</asp:HyperLink>
+    
+      <asp:HyperLink runat="server" NavigateUrl="OurTeam.aspx" class="nav-link "><i class="fa fa-address-book"></i>Reach Us</asp:HyperLink>
       <a class="nav-link " href="#"><i class="fa fa-question-circle"></i>Queries & Suggestions</a>
      
     </div>
