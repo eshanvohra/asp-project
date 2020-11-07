@@ -22,6 +22,7 @@ namespace login2
         static string senderaccount;
         static int transactionamount;
         static string date = DateTime.Now.ToString();
+
         string custid = "ESB39069";
         string receivercustid = "";
         static string receiverEmailId = "";
