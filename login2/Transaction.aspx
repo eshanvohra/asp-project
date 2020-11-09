@@ -10,18 +10,38 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     
     <style type="text/css">
-          #accountstatement{
-            display:flex;
-            justify-content:center;
-            
-            height:300px;
+                 body{
             width:100vw;
-            border:2px solid black;
-            overflow:auto;
-            text-align:center;
-            align-items:center;
+            height:100vh;
+            font-family: 'Baloo 2', cursive;
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+          
+           background: rgb(242,209,124);
+           background: radial-gradient(circle, rgba(242,209,124,1) 0%, #673AB7 100%); 
+           background-size:100% 100% ;
+            background-repeat: no-repeat;
+            font-family: 'Baloo 2', cursive;
+        }
+                         .reg-box{     
+                    width: 545px;
+    height: 681px;
+    position: relative;
+    top: 8px;
+    /* left: -74px; */
+    color: white;
+    /* transform: translate(-50%,-50%); */
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgb(128,87,198)100%);
+    border-radius: 40px 5px 40px 5px;
+    box-shadow: 8px 8px 8px rgb(96,61,157);
+    cursor: pointer;
+        }
+        .reg-box h1{
+            color:white;
+            margin-top:20px;
+            font-family: 'Sansita Swashed', cursive;
 
         }
+
         #DataList1{
         
         }
@@ -39,51 +59,109 @@
             text-align: center;
         }
        .maintable{
-
        }
        .maintable tr{
-
        }
        .datalistmy{
               /* border: 2px solid black;*/
-    height: 483px;
+     height: 483px;
     overflow: auto;
     position: relative;
-    top: -425px;
+    top: -538px;
     left: -477px;
        }
        .accountlabel{
-               position: relative;
-    top: -439px;
+                  position: relative;
+   
     font-size: 26px;
     font-weight: 800;
     left: -475px;
+    top: -560px;
+    color: white;
        }
+       #DataList1 {
+    background: transparent!important;
+    color: white!important;
+}
       /*.afterdetailsfetch{
           display:none;
        }
     #detailstable{
         display:none;
     }*/
+          .myButton {
+	box-shadow: 3px 4px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:15px;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:black!important;
+    font-weight:bold;
+	font-family:Arial;
+	font-size:13px;
+	padding:7px 25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+    margin:5px 10px;
+    width:172px;
+  
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+input[type=text]{
+            background:transparent;
+            width:200px;
+            border-radius:3px;
+              border-bottom:3px solid rgb(255,165,0);
+              border-left:none;
+              border-right:none;
+              border-top:none;
+              color:white;
+              text-align:center;
+          }
+#Button3{
+        left: -544px;
+    display: inline-block;
+    position: relative;
+    top: -63px;
+}
+#Button4{
+    width:237px;
+}
+#Button7{
+    display: inline-block;
+    position: relative;
+    left: 432px;
+    top: -63px;
+}
+
+
     </style>
    
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="container">
-             <div class="homebutton">
+        <div class="container"> 
+            
+            <div class="container reg-box">
+            <div class="homebutton">
                 
                 <asp:Button ID="Button3" class="myButton" runat="server" Text="Back to Home Page" CausesValidation="False" PostBackUrl="homepage.aspx"/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                
+              
                 <asp:Button ID="Button7" class="myButton" runat="server" Text="Log Out" CausesValidation="False" PostBackUrl="loginpage.aspx"/>
             </div>
-             <div class="homebutton">
                 
-            </div>
           <h1>Transfer Money </h1>
 
-            <asp:Button ID="Button6" runat="server" OnClick="Button6_Click" Text="Check Your Balance" />
+            <asp:Button ID="Button6" class="myButton" runat="server" OnClick="Button6_Click" Text="Check Your Balance" />
 &nbsp;&nbsp;&nbsp;
             <asp:Label ID="Label16" runat="server"></asp:Label>
 
@@ -128,7 +206,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style1" colspan="3">
-                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Fetch Details" ValidationGroup="maintable" />
+                        <asp:Button ID="Button1"  class="myButton" runat="server" OnClick="Button1_Click" Text="Fetch Details" ValidationGroup="maintable" />
                     </td>
                 </tr>
             </table>
@@ -140,7 +218,7 @@
             <asp:Label ID="Label1" runat="server"></asp:Label>
             <asp:Label ID="Label15" runat="server" ForeColor="Red"></asp:Label>
         </p>
-       <div class="afterdetailsfetch"> 
+                <asp:Panel ID="Panel1" runat="server" Visible="False">   <div class="afterdetailsfetch"> 
         <table class="table secondtable" id="detailstable">
             <tr>
                 <td>Sender&#39;s Name:</td>
@@ -162,7 +240,7 @@
             </tr>
             <tr>
                 <td class="auto-style1" colspan="2">
-                    <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Generate OTP" Visible="False" />
+                    <asp:Button ID="Button5" class="myButton" runat="server" OnClick="Button5_Click" Text="Generate OTP" Visible="False" />
                     <br />
                     <br />
                     <asp:TextBox ID="OTPTextBox" runat="server" Visible="False"></asp:TextBox>
@@ -173,14 +251,17 @@
             </tr>
         </table>
            </div>
+
+                    <asp:Button ID="Button2" class="myButton" runat="server" OnClick="Button2_Click" Text="Confirm" Visible="False" ValidationGroup="otp" />
+                </asp:Panel>
+    
       
         
    <asp:Label ID="Label3" runat="server"></asp:Label>
       
-                    <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Confirm" Visible="False" ValidationGroup="otp" />
                
       
-            <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Account Statement" />
+            <asp:Button ID="Button4" class="myButton" runat="server" OnClick="Button4_Click" Text="Generate Account Statement" />
                
         
 <asp:Label ID="Label4" runat="server"></asp:Label>
@@ -188,11 +269,14 @@
             <asp:Label ID="Label6" runat="server"></asp:Label>
        <br />
        <br />
-            <div class="accountlabel"><asp:Label ID="Label8" runat="server" Text="Your Account Statement" Visible="false"></asp:Label></div>
-           <div class="datalistmy"> 
+           
+                </div>
+             <div class="accountlabel"><asp:Label ID="Label8" runat="server" Text="Your Account Statement" Visible="false"></asp:Label></div>
+          
+            <div class="datalistmy"> 
                
-               <asp:DataList ID="DataList1" runat="server" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="5" ForeColor="Black" CssClass="">
-                <AlternatingItemStyle BackColor="PaleGoldenrod" />
+               <asp:DataList ID="DataList1" runat="server" BackColor="#dfe6e9" BorderColor="Tan" BorderWidth="1px" CellPadding="5" ForeColor="Black" CssClass="">
+                <AlternatingItemStyle  />
                 <FooterStyle BackColor="Tan" />
                 <HeaderStyle BackColor="Tan" Font-Bold="True" />
                 <ItemTemplate>

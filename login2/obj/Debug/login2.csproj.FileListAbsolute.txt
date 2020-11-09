@@ -294,7 +294,6 @@ D:\ASP.NET Tutorials\e_SmartBanker_Project_ASP.NET(Updated)\asp-project\login2\o
 D:\ASP.NET Tutorials\e_SmartBanker_Project_ASP.NET(Updated)\asp-project\login2\bin\QRCoder.dll
 D:\ASP.NET Tutorials\e_SmartBanker_Project_ASP.NET(Updated)\asp-project\login2\obj\Debug\login2.csprojAssemblyReference.cache
 D:\ASP Practice\login2\login2\bin\QRCoder.dll
-D:\ASP Practice\login2\login2\obj\Debug\login2.csprojAssemblyReference.cache
 D:\asp-project\login2\bin\login2.dll.config
 D:\asp-project\login2\bin\login2.dll
 D:\asp-project\login2\bin\login2.pdb
@@ -355,3 +354,4 @@ D:\asp-project\login2\obj\Debug\login2.csproj.CoreCompileInputs.cache
 D:\asp-project\login2\obj\Debug\login2.csproj.CopyComplete
 D:\asp-project\login2\obj\Debug\login2.dll
 D:\asp-project\login2\obj\Debug\login2.pdb
+D:\ASP Practice\login2\login2\obj\Debug\login2.csprojAssemblyReference.cache
