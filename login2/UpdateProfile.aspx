@@ -60,7 +60,6 @@
            }
         i{
             margin-right:8px;
-
         }
         .fa{
             color:white;

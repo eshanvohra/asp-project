@@ -85,9 +85,10 @@ namespace login2
             Response.Redirect("UpdateProfile.aspx?custid=" + Label2.Text + "");
 
         }
-        protected void Button3_Click(object sender, EventArgs e)
+        protected void Button4_Click(object sender, EventArgs e)
         {
-            
+          
+                       Response.Redirect("Transaction.aspx?custid=" + Label2.Text + "");
         }
 
        
