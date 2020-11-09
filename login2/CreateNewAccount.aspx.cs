@@ -14,9 +14,11 @@ namespace login2
 {
     public partial class CreateNewAccount : System.Web.UI.Page
     {
+        static int flag = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            RangeValidator1.MinimumValue = DateTime.Now.AddYears(-100).ToShortDateString();
+            RangeValidator1.MaximumValue = DateTime.Now.AddYears(-18).ToShortDateString();
         }
 
       
@@ -87,8 +89,12 @@ namespace login2
                 return 0;
             }
         }
+
+
+
         protected void Button2_Click(object sender, EventArgs e)
         {
+            
             Random rand = new Random();
             int n = rand.Next(0, 100000);
             string custid = "ESB" + n;
@@ -102,12 +108,14 @@ namespace login2
             {
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
-       
+                string DOB = Convert.ToString(TextDOB.Text);
+               // Response.Write(DOB);
+               // Response.Write(DOB);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "insert into cust_profile values(@name,@dob,@actype," +
                     "@mob,@email,@address,@aadhar,@pan,@custid,@account)";
                 cmd.Parameters.AddWithValue("@name", TextFN.Text);
-                cmd.Parameters.AddWithValue("@dob", TextDOB.Text);
+                cmd.Parameters.AddWithValue("@dob", DOB);
                 cmd.Parameters.AddWithValue("@actype", RadioButtonList1.Text);
                 cmd.Parameters.AddWithValue("@mob", TextMob.Text);
                 cmd.Parameters.AddWithValue("@email", TextMail.Text);
@@ -120,8 +128,15 @@ namespace login2
                
                 TextAccount.Text = "36547" + (number);
                 TextCust.Text = "ESB" + n;
-              //  sendEmail(subject,body,)
-                
+                //  sendEmail(subject,body,)
+                string subject = "Welcome to ESB Family!!";
+                string body = "Your Account has been created Successfully." +
+                    "Your Account no. is " + account + " & Cust ID is " + custid + " . Click on Register Now button to continue";
+                string name = TextFN.Text;
+                string email = TextMail.Text;
+                int t=sendEmail(subject, body, name, email);
+
+                flag = 1;
             }
             catch(Exception ex)
             {
@@ -132,35 +147,39 @@ namespace login2
             {
                 con.Close();
             }
-            //adding entry to Account_Details table
-            try
+            if (flag == 1)
             {
+                //adding entry to Account_Details table
+                try
+                {
 
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@accountno", account);
-                cmd.Parameters.AddWithValue("@custid", custid);
-                cmd.Parameters.AddWithValue("@amt", "5000");
-                
+                    con.Open();
+                    SqlCommand cmd2 = con.CreateCommand();
+                    cmd2.CommandType = CommandType.Text;
+                    cmd2.Parameters.AddWithValue("@accountno", account);
+                    cmd2.Parameters.AddWithValue("@custid", custid);
+                    cmd2.Parameters.AddWithValue("@amt", "5000");
 
-                cmd.CommandText = "Insert into Account_Details values (@custid,@accountno,@amt)";
-          
-                cmd.ExecuteNonQuery();
 
-                Label1.Text = "Added entry to Account_Details table";
+                    cmd2.CommandText = "Insert into Account_Details values (@custid,@accountno,@amt)";
 
+                    cmd2.ExecuteNonQuery();
+
+                    //  Label1.Text = "Added entry to Account_Details table";
+
+                }
+
+                catch (Exception ex)
+                {
+                    Label1.Text = ex.Message;
+                }
+                finally
+                {
+                    con.Close();
+                }
             }
-
-            catch (Exception ex)
-            {
-                Label1.Text = ex.Message;
-            }
-            finally
-            {
-                con.Close();
-            }
-
+            Panel1.Visible = true;
         }
     }
+
 }
