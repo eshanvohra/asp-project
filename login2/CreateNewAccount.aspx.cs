@@ -21,7 +21,7 @@ namespace login2
             RangeValidator1.MaximumValue = DateTime.Now.AddYears(-18).ToShortDateString();
         }
 
-      
+
 
         protected void TextLN_TextChanged(object sender, EventArgs e)
         {
@@ -92,15 +92,30 @@ namespace login2
 
 
 
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Panel1.Visible = false;
+            //  Label1.Text = "Added entry to Account_Details table";
+            TextFN.Text = "";
+            TextDOB.Text = "";
+            RadioButtonList1.Text = "";
+            TextMob.Text = "";
+            TextMail.Text = "";
+            Address.Text = "";
+            TextAdc.Text = "";
+            TextPan.Text = "";
+
+        }
         protected void Button2_Click(object sender, EventArgs e)
         {
-            
+
             Random rand = new Random();
             int n = rand.Next(0, 100000);
             string custid = "ESB" + n;
-   //         TextCust.Text = "ESB" + n;
+            //         TextCust.Text = "ESB" + n;
             int number = rand.Next(100000);
-            string account= "36547" + (number);
+            string account = "36547" + (number);
             //      TextAccount.Text = "36547" + (number);
 
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\registration_page.mdf;Integrated Security=True");
@@ -109,8 +124,8 @@ namespace login2
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 string DOB = Convert.ToString(TextDOB.Text);
-               // Response.Write(DOB);
-               // Response.Write(DOB);
+                // Response.Write(DOB);
+                // Response.Write(DOB);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "insert into cust_profile values(@name,@dob,@actype," +
                     "@mob,@email,@address,@aadhar,@pan,@custid,@account)";
@@ -125,7 +140,7 @@ namespace login2
                 cmd.Parameters.AddWithValue("@custid", custid);
                 cmd.Parameters.AddWithValue("@account", account);
                 cmd.ExecuteNonQuery();
-               
+
                 TextAccount.Text = "36547" + (number);
                 TextCust.Text = "ESB" + n;
                 //  sendEmail(subject,body,)
@@ -134,11 +149,11 @@ namespace login2
                     "Your Account no. is " + account + " & Cust ID is " + custid + " . Click on Register Now button to continue";
                 string name = TextFN.Text;
                 string email = TextMail.Text;
-                int t=sendEmail(subject, body, name, email);
+                int t = sendEmail(subject, body, name, email);
 
                 flag = 1;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 TextCust.Text = "Sorry Pls Try Again";
                 TextAccount.Text = ex.Message;
@@ -165,7 +180,7 @@ namespace login2
 
                     cmd2.ExecuteNonQuery();
 
-                    //  Label1.Text = "Added entry to Account_Details table";
+                  
 
                 }
 
@@ -181,5 +196,5 @@ namespace login2
             Panel1.Visible = true;
         }
     }
-
+    
 }

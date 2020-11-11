@@ -14,7 +14,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
    
-    <title> REGRISTRATION PAGE</title>
+    <title> Registeration Page- ESB</title>
     <script>
         function getModal() {
             p = document.getElementById('myModal');
@@ -282,6 +282,9 @@
         /* loader ends */
     </style>
 </head>
+        <link rel="icon" 
+      type="image/png" 
+      href="../Images/favicon.png" />
 <body onload="myfunction()">
     <form id="form1" runat="server">
          <div id="loading">

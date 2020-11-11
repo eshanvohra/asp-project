@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>New Account- ESB
+    </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
      <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@700&display=swap" rel="stylesheet"/>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -350,6 +351,9 @@ a {
         /* loader ends */
     </style>
 </head>
+        <link rel="icon" 
+      type="image/png" 
+      href="../Images/favicon.png" />
 <body onload="myfunction()">
     <form id="form1" runat="server">
           <div id="loading">
@@ -493,7 +497,8 @@ a {
             <p class="container text-center">
             <asp:Button ID="Button1" class="myButton" runat="server" CausesValidation="False" Text="Back to Home" OnClick="Button1_Click" />
                 <asp:Button ID="Button2" class="myButton" runat="server" Text="Check" OnClick="Button2_Click"  />
-                <a class="myButton" data-toggle="modal" href="#ignismyModal" onclick="getModal()">Submit Data</a>
+                <asp:Button ID="Button3" class="myButton" runat="server" Text="Submit Data" data-toggle="modal" href="#ignismyModal" onClientClick="getModal()" OnClick="Button3_Click" CausesValidation="False"  />
+                
              </p>
             </section>
         <br />
