@@ -15,6 +15,16 @@
         padding:0px;
         box-sizing:border-box;
     }
+   #bg{
+	position:fixed;
+background-image: url("logonewnew.png");
+background-size: 150px;
+margin-right:8px;
+width:100vw;
+height:100vh;
+opacity: 0.09;
+z-index:-1;
+}
     .logo{
         width: 523px;
     height: auto;
@@ -168,7 +178,7 @@
          <span></span>
          <span class="loader1">Loading</span>
         </div>
- 
+ <div id="bg"></div>
         <div class="container">
             <h1>Overview</h1>
             <h4>About ESmartBanker :</h4>
