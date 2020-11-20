@@ -81,6 +81,7 @@
       <DependentUpon>registration_page.mdf</DependentUpon>
     </Content>
     <Content Include="BillManager.aspx" />
+    <Content Include="ChequeRequest.aspx" />
     <Content Include="CreateNewAccount.aspx" />
     <Content Include="cust_after_login.aspx" />
     <Content Include="electricitybillpay.aspx" />
@@ -123,6 +124,13 @@
     </Compile>
     <Compile Include="BillManager.aspx.designer.cs">
       <DependentUpon>BillManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChequeRequest.aspx.cs">
+      <DependentUpon>ChequeRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChequeRequest.aspx.designer.cs">
+      <DependentUpon>ChequeRequest.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateNewAccount.aspx.cs">
       <DependentUpon>CreateNewAccount.aspx</DependentUpon>
