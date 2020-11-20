@@ -22,7 +22,7 @@ namespace login2
         static string senderaccount;
         static int transactionamount;
         static string date = DateTime.Now.ToString();
-        string custid = "ESB39069";
+        string custid ="ESB14785";
         string receivercustid = "";
         static string receiverEmailId = "";
         static string senderEmailId = "";
@@ -31,10 +31,10 @@ namespace login2
         static int OTP;
         protected void Page_Load(object sender, EventArgs e)
         {
-            string name = Request.QueryString["custid"];
+            /*string name = Request.QueryString["custid"];
 
            custid = name;
-            
+            */
 
             //  Response.Write(date);
             //        detailstable.Visible = false;

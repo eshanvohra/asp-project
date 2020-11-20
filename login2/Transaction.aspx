@@ -11,8 +11,7 @@
     
     <style type="text/css">
                  body{
-            width:100vw;
-            height:100vh;
+            
             font-family: 'Baloo 2', cursive;
             background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
           
@@ -26,7 +25,7 @@
                     width: 545px;
     height: 681px;
     position: relative;
-    top: 8px;
+    top: -52px;
     /* left: -74px; */
     color: white;
     /* transform: translate(-50%,-50%); */
@@ -128,19 +127,22 @@ input[type=text]{
               text-align:center;
           }
 #Button3{
-        left: -544px;
+     left: -628px;
     display: inline-block;
     position: relative;
-    top: -63px;
+    top: 19px;
 }
 #Button4{
     width:237px;
 }
 #Button7{
-    display: inline-block;
+        display: inline-block;
     position: relative;
-    left: 432px;
-    top: -63px;
+    left: 570px;
+    top: -19px;
+}
+.check{
+   position:relative;
 }
 #loading{            /*loader starts*/
             display:flex;
@@ -278,13 +280,13 @@ input[type=text]{
          <span class="loader1">Loading</span>
         </div>
         <div class="container"> 
+                <asp:Button ID="Button3" class="myButton" runat="server" Text="Back to Home Page" CausesValidation="False" PostBackUrl="homepage.aspx"/>
+                <asp:Button ID="Button7" class="myButton" runat="server" Text="Log Out" CausesValidation="False" PostBackUrl="loginpage.aspx"/>
             
             <div class="container reg-box">
             <div class="homebutton">
                 
-                <asp:Button ID="Button3" class="myButton" runat="server" Text="Back to Home Page" CausesValidation="False" PostBackUrl="homepage.aspx"/>
               
-                <asp:Button ID="Button7" class="myButton" runat="server" Text="Log Out" CausesValidation="False" PostBackUrl="loginpage.aspx"/>
             </div>
                 
           <h1>Transfer Money </h1>
@@ -379,9 +381,11 @@ input[type=text]{
             </tr>
         </table>
            </div>
-
-                    <asp:Button ID="Button2" class="myButton" runat="server" OnClick="Button2_Click" Text="Confirm" Visible="False" ValidationGroup="otp" />
-                </asp:Panel>
+                    <div class="check">
+                   <asp:Button ID="Button2" class="myButton" runat="server" OnClick="Button2_Click" Text="Confirm" Visible="False" ValidationGroup="otp" />
+            </div>
+                        </asp:Panel>
+                   <asp:Button ID="Button4" class="myButton" runat="server" OnClick="Button4_Click" Text="Generate Account Statement" />
     
       
         
@@ -389,7 +393,6 @@ input[type=text]{
       
                
       
-            <asp:Button ID="Button4" class="myButton" runat="server" OnClick="Button4_Click" Text="Generate Account Statement" />
                
         
 <asp:Label ID="Label4" runat="server"></asp:Label>
