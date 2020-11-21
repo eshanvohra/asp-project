@@ -34,15 +34,16 @@ namespace login2
                 SqlCommand cmd = con.CreateCommand();
 
                 string service = "Cheque_Book_leaves_" + DropDownList1.Text + "_Mode_" + RadioButtonList1.Text;
-
+                string date = DateTime.Now.ToString();
                 cmd.Parameters.AddWithValue("@custid", TextBox1.Text);
                 cmd.Parameters.AddWithValue("@account", TextBox2.Text);
                 cmd.Parameters.AddWithValue("@name", TextBox3.Text);
                 cmd.Parameters.AddWithValue("@firmname", TextBox4.Text);
                 cmd.Parameters.AddWithValue("@service", service);
+                cmd.Parameters.AddWithValue("@date", date);
 
-                cmd.CommandText = "Insert into Service_Requests (CustomerID,Name,Firm_Name,Account_No,Service_Requested) values (@custid," +
-                    "@name,@firmname,@account,@service) ";
+                cmd.CommandText = "Insert into Service_Requests (CustomerID,Name,Firm_Name,Account_No,Service_Requested,Date) values (@custid," +
+                    "@name,@firmname,@account,@service,@date) ";
                 cmd.ExecuteNonQuery();
              //   Response.Write("Success");
                 //sending email
@@ -54,6 +55,7 @@ namespace login2
                 string receiverEmail = email;
                 string salutation = "Dear " + name + " ,";
                 int t = sendEmail(subject, body, salutation, receiverEmail);
+                Label1.Text = "Success";
             }
             catch (Exception ex)
             {
