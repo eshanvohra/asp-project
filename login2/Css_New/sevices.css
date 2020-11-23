@@ -1,25 +1,23 @@
-﻿.auto-style1 {
-    text-align: center;
+﻿
+.card {
+    width: 308px !important;
 }
-
-.auto-style2 {
-    width: 70%;
+.img-fluid {
+    max-width: 306px !important;
+   
 }
-
-.tbl {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.row{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
 }
-
-.image {
-    border-radius: 20px;
+img {
+    max-width: 306px !important;
 }
-
-tr {
-    margin-top: 15px;
+img{
+    height:100px;
 }
-
 #loading { /*loader starts*/
     display: flex;
     width: 100%;

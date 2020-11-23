@@ -8,6 +8,8 @@
     
 <link rel="stylesheet" href="Css_New/services.css" />
 </head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+
     <link rel="icon" 
       type="image/png" 
       href="../Images/favicon.png" />
@@ -21,22 +23,80 @@
          <span class="loader1">Loading</span>
         </div>
     
-        <div class="auto-style1">
-            <h1>
-
-            Services
+        <div class="container">
+            <h1 class="text-center mt-3 mb-5">Services
             </h1>
             <br />
             <br />
             <br />
 
-&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;
+
             <br />
-            <div class="tbl">
-            <table class="auto-style2">
+        <div class="container">
+            <div class="row">
+                <div class="card col-md-3 mr-5">
+  <div class="bg-image hover-overlay ripple" data-ripple-color="light">
+    <img
+      src="../Images/electricity.jpg"
+      class="img-fluid"
+    />
+    <a href="electricitybillpay.aspx">
+      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+    </a>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of the
+      card's content.
+    </p>
+    <a href="electricitybillpay.aspx" class="btn btn-secondary btn-lg btn-block btn-success">Button</a>
+  </div>
+                    </div>
+                <div class="card col-md-3 mr-5">
+  <div class="bg-image hover-overlay ripple" data-ripple-color="light">
+    <img
+      src="../Images/electricity.jpg"
+      class="img-fluid"
+    />
+    <a href="electricitybillpay.aspx">
+      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+    </a>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of the
+      card's content.
+    </p>
+    <a href="electricitybillpay.aspx" class="btn btn-secondary btn-lg btn-block btn-success">Button</a>
+  </div>
+                    </div>
+                <div class="card col-md-3 mr-5">
+  <div class="bg-image hover-overlay ripple" data-ripple-color="light">
+    <img
+      src="../Images/electricity.jpg"
+      class="img-fluid"
+    />
+    <a href="electricitybillpay.aspx">
+      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+    </a>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of the
+      card's content.
+    </p>
+    <a href="electricitybillpay.aspx" class="btn btn-secondary btn-lg btn-block btn-success">Button</a>
+  </div>
+                    </div>
+
+</div>
+            </div>
+            <!--<table class="table">
                 <tr>
-                    <td class="auto-style1">
+                    <td class="text-center">
 
             <asp:ImageButton ID="ImageButton1"  class="image" runat="server" Height="130px" ImageUrl="../Images/electricity.jpg" AlternateText="Electricity Bill Pay" DescriptionUrl="Electricity Bill Pay" PostBackUrl="~/electricitybillpay.aspx" />
                     </td>
@@ -48,7 +108,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style1">
+                    <td class="">
 
                         &nbsp;</td>
                     <td>
@@ -57,17 +117,17 @@
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style1">Electricity Bill Pay</td>
+                    <td class="text-center">Electricity Bill Pay</td>
                     <td>Telephone Bill Pay</td>
                     <td>Cheque Book Request</td>
                 </tr>
                 <tr>
-                    <td class="auto-style1">&nbsp;</td>
+                    <td class="">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style1">&nbsp;</td>
+                    <td class="text-center">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -91,8 +151,8 @@
                 <tr>
                     <td colspan="3">Debit Card Request&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Credit Card Request</td>
                 </tr>
-            </table>
-                </div>
+            </table>-->
+                
         </div>
     </form>
      <script>
