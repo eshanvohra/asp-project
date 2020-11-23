@@ -116,6 +116,7 @@
     <Content Include="Images\cheque.jpg" />
     <Content Include="Images\creditcard.png" />
     <Content Include="Images\debitcard.jpg" />
+    <Content Include="Images\double.png" />
     <Content Include="Images\electricity.jpg" />
     <Content Include="Images\favicon.jpg" />
     <Content Include="Images\favicon.png" />
@@ -123,6 +124,7 @@
     <Content Include="Images\i1.jpg" />
     <Content Include="Images\i2.jpg" />
     <Content Include="Images\i3.jpg" />
+    <Content Include="Images\light.png" />
     <Content Include="Images\logonewnew.png" />
     <Content Include="Images\nameicon.png" />
     <Content Include="Images\password11icon.png" />

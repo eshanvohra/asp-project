@@ -1,9 +1,26 @@
-﻿.auto-style1 {
-    text-align: center;
+﻿*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-
-.auto-style2 {
-    width: 100%;
+body{
+    background-image:url('../Images/light.png');
+}
+h1{
+    font-size:2rem;
+}
+.container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    font-size:1.5rem;
+}
+.panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #loading { /*loader starts*/
