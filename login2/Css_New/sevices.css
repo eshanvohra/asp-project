@@ -1,23 +1,34 @@
-﻿
-.card {
-    width: 308px !important;
+﻿*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
 }
-.img-fluid {
-    max-width: 306px !important;
+body{
+    background-image:url("../Images/servicebg.jpg");
+    background-size:100% 100%;
+}
+.card {
+    background-image: url('../Images/texture.png');
+    border-radius: 40px 5px 40px 5px;
+    box-shadow: 8px 8px 8px rgba(201, 104, 13, 0.788);
+}
+    .card:hover {
+        box-shadow: 10px 10px 29px -3px rgba(0,0,0,0.79);
+        transform: translateY(-6px);
+    }
+.ryp {
+
+   display:flex;
+   align-items:center;
+   flex-direction:row;
+   justify-content:space-around;
+   margin-bottom:90px;
    
 }
-.row{
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    justify-content:center;
+.img{
+    height:186px!important;
 }
-img {
-    max-width: 306px !important;
-}
-img{
-    height:100px;
-}
+
 #loading { /*loader starts*/
     display: flex;
     width: 100%;

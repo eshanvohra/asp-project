@@ -129,6 +129,7 @@
     <Content Include="Images\nameicon.png" />
     <Content Include="Images\password11icon.png" />
     <Content Include="Images\pic.png" />
+    <Content Include="Images\servicebg.jpg" />
     <Content Include="Images\success.jpg" />
     <Content Include="Images\success.png" />
     <Content Include="Images\telephone.png" />
