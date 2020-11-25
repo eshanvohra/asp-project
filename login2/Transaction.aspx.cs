@@ -22,7 +22,7 @@ namespace login2
         static string senderaccount;
         static int transactionamount;
         static string date = DateTime.Now.ToString();
-        string custid = "ESB39069";
+        string custid ="ESB14785";
         string receivercustid = "";
         static string receiverEmailId = "";
         static string senderEmailId = "";
@@ -31,13 +31,50 @@ namespace login2
         static int OTP;
         protected void Page_Load(object sender, EventArgs e)
         {
-              string name = Request.QueryString["custid"];
+            /*string name = Request.QueryString["custid"];
 
-            custid = name;
-             
-           
+           custid = name;
+            */
+
             //  Response.Write(date);
-    //        detailstable.Visible = false;
+            //        detailstable.Visible = false;
+            // for checking sender balance
+
+
+            string balance = "1";
+
+            try
+            {
+               
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+
+
+                cmd.Parameters.AddWithValue("@senderid", custid);
+
+                cmd.CommandText = "Select Balance from Account_Details where Cust_ID=@senderid";
+
+                string s = "sender";
+
+                SqlDataReader r = cmd.ExecuteReader();
+                if (r.Read())
+                {
+                    s = r.GetString(0);
+                }
+                balance = s;
+
+                balancecheck = Convert.ToInt32(balance);
+             //   Label16.Text = "Your Current balance is " + balancecheck;
+
+            }
+            catch (Exception ex)
+            {
+               // Label16.Text = ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -77,6 +114,7 @@ namespace login2
                 else
                 {
                     Label15.Text = "Proceed To OTP GENERATION";
+                    Panel1.Visible = true;
                     Receivername.Text = rec;
                     receiverName = rec;
                     receiverEmailId = recId;
@@ -200,7 +238,9 @@ namespace login2
                 Sendername.Text = "";
                 Receivername.Text = "";
                 AmountToSend.Text = "";
-                Button5.Visible = false;
+               // Button5.Visible = false;
+               // Button5.Visible = false;
+                Panel1.Visible = false;
             }
             else
             {
@@ -210,7 +250,8 @@ namespace login2
             // detailstable.Visible = true;
             if (Label15.Text == "INVAID RECEIVER ACCOUNT")
             {
-                Button5.Visible = false;
+               // Button5.Visible = false;
+                Panel1.Visible = false;
             }
         }
 
