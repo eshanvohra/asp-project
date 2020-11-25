@@ -69,27 +69,28 @@
     <a href="telephonebillpay.aspx" class="btn btn-secondary btn-lg btn-block btn-success">Button</a>
   </div>
                     </div>
-                    <div class="card col-md-3 mx-3 ">
-  <div class="bg-image hover-overlay ripple mx-auto" data-ripple-color="light">
+                    
+                <div class="card col-md-3 mx-3 ">
+  <div class="bg-image hover-overlay ripple" data-ripple-color="light">
     <img
-      src="../Images/cheque.jpg"
+      src="../Images/creditcard.png"
       class="img-fluid"
     />
-    <a href="ChequeRequest.aspx">
+    <a href="Credit_Card_Request.aspx">
       <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
     </a>
   </div>
   <div class="card-body">
-    <h5 class="card-title">Cheque Book Request</h5>
+    <h5 class="card-title">Credit Card Request</h5>
     <p class="card-text">
       Some quick example text to build on the card title and make up the bulk of the
       card's content.
     </p>
-    <a href="ChequeRequest.aspx" class="btn btn-secondary btn-lg btn-block btn-success">Button</a>
+    <a href="Credit_Card_Request.aspx" class="btn btn-secondary btn-lg btn-block btn-success">Button</a>
   </div>
                     </div>
-
                 </div>
+
             <div class="ryp">
                  <div class="card col-md-3 mx-3 ">
   <div class="bg-image hover-overlay ripple" data-ripple-color="light">
@@ -109,24 +110,25 @@
     </p>
     <a href="Debit_Card_Request.aspx" class="btn btn-secondary btn-lg btn-block btn-success">Button</a>
   </div>
+                    
                     </div>
-                  <div class="card col-md-3 mx-3 ">
-  <div class="bg-image hover-overlay ripple" data-ripple-color="light">
+                   <div class="card col-md-3 mx-3 ">
+  <div class="bg-image hover-overlay ripple mx-auto" data-ripple-color="light">
     <img
-      src="../Images/creditcard.png"
+      src="../Images/cheque.jpg"
       class="img-fluid"
     />
-    <a href="Credit_Card_Request.aspx">
+    <a href="ChequeRequest.aspx">
       <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
     </a>
   </div>
   <div class="card-body">
-    <h5 class="card-title">Debit Card Request</h5>
+    <h5 class="card-title">Cheque Book Request</h5>
     <p class="card-text">
       Some quick example text to build on the card title and make up the bulk of the
       card's content.
     </p>
-    <a href="Credit_Card_Request.aspx" class="btn btn-secondary btn-lg btn-block btn-success">Button</a>
+    <a href="ChequeRequest.aspx" class="btn btn-secondary btn-lg btn-block btn-success">Button</a>
   </div>
                     </div>
 
