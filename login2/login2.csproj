@@ -114,6 +114,7 @@
     <Content Include="Images\bg.jpg" />
     <Content Include="Images\bglogo.png" />
     <Content Include="Images\cheque.jpg" />
+    <Content Include="Images\cheque.png" />
     <Content Include="Images\creditcard.png" />
     <Content Include="Images\debitcard.jpg" />
     <Content Include="Images\double.png" />

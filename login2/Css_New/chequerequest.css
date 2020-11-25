@@ -1,10 +1,13 @@
-﻿.auto-style1 {
-    text-align: center;
+﻿*{
+    margin:0;padding:0;
+    box-sizing:border-box;
+    
+}
+body{
+    background-image:url("../Images/texture.png")
 }
 
-.auto-style2 {
-    width: 100%;
-}
+
 
 #loading { /*loader starts*/
     display: flex;
