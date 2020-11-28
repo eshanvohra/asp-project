@@ -21,14 +21,19 @@
          <span></span>
          <span class="loader1">Loading</span>
         </div>
+     <div class="buttons">
+         <asp:Button ID="Button3" class=" btn btn-success" runat="server" Text="Back to Dashboard" OnClick="Button3_Click" CausesValidation="False"   />
+    
+         <asp:Button ID="Button4" class=" btn btn-danger" runat="server" Text="Logout" PostBackUrl="~/loginpage.aspx" CausesValidation="False" />
+     </div>
     
         <div class="container">
-           <h1>Credit Card Request</h1>
+           <h1 class="text-center">Credit Card Request</h1>
             <br />
             <br />
 
             Your Customer Id is:&nbsp;
-            <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
             <br />
             <br />
             <asp:Button ID="Button2" class="btn btn-primary" runat="server" Text="Fetch Details" OnClick="Button2_Click" />

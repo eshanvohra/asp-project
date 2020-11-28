@@ -20,10 +20,11 @@
          <span></span>
          <span class="loader1">Loading</span>
         </div>
-   
-        <asp:Button ID="Button4" runat="server" class="btn btn-success ml-3 mr-3" Text="Back To Home Page" CausesValidation="False" PostBackUrl="homepage.aspx"/>
+   <div class="buttons">
+        <asp:Button ID="Button4" runat="server" class="btn btn-success ml-3 mr-3" Text="Back To Dashboard" CausesValidation="False" OnClick="Button4_Click"/>
         <asp:Button ID="Button5" CssClass="btn btn-danger" runat="server" Text="Logout" CausesValidation="False" PostBackUrl="loginpage.aspx" />
-        <h1 class="mt-3 mb-5 text-center">Telephone Bill Payment</h1>
+       </div> 
+       <h1 class="mt-3 mb-5 text-center">Telephone Bill Payment</h1>
 
         <div class="container">
             

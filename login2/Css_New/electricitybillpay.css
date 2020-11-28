@@ -7,6 +7,18 @@
 body {
     background-image: url("../Images/pic.png");
 }
+.buttons {
+    display: flex;
+    justify-items: flex-end;
+    position: relative;
+    top: 15px;
+    left: 10px;
+}
+
+#Button7 {
+    position: absolute;
+    right: 19px;
+}
 
 .reg-box {
     width: 600px;

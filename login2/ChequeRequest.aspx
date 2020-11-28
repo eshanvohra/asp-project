@@ -21,10 +21,15 @@
          <span></span>
          <span class="loader1">Loading</span>
         </div>
+     <div class="buttons">
+         <asp:Button ID="Button3" class=" btn btn-success" runat="server" Text="Back to Dashboard" OnClick="Button3_Click"   CausesValidation="False" />
+    
+         <asp:Button ID="Button4" class=" btn btn-danger" runat="server" Text="Logout" PostBackUrl="~/loginpage.aspx" CausesValidation="False" />
+     </div>
     
         
         <div class="container">
-                <h1 class="mt-3 mb-3"> Cheque Request Form</h1>
+                <h1 class="mt-3 mb-3 text-center"> Cheque Request Form</h1>
 
             Your Customer Id is:&nbsp;
             <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server"></asp:TextBox>

@@ -25,10 +25,18 @@ namespace login2
         {
 
         }
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("cust_after_login.aspx?custid=" + TextBox1.Text + "");
+
+
+        }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+           
             try
+           
             {
 
                 con.Open();
@@ -96,11 +104,14 @@ namespace login2
                 return 0;
             }
         }
-
-        protected void Button2_Click(object sender, EventArgs e)
+        
+            protected void Button2_Click(object sender, EventArgs e)
         {
             // fetching name, email and account number from Account_Details Table
             // for getting sender's name and Email
+
+
+           
             try
             {
 
@@ -142,5 +153,11 @@ namespace login2
             }
 
         }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

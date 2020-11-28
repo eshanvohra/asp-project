@@ -6,6 +6,19 @@
 body{
     background-image:url('../Images/light.png');
 }
+.buttons {
+    display: flex;
+    justify-items: flex-end;
+    position: relative;
+    top: 15px;
+    left: 10px;
+}
+
+#Button5{
+    position: absolute;
+    right: 19px;
+}
+
 h1{
     font-size:2rem;
 }

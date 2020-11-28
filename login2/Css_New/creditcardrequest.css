@@ -7,6 +7,17 @@
 body {
     background-image: url("../Images/texture.png")
 }
+.buttons{
+    display:flex;
+    justify-items:flex-end;
+    position:relative;
+    top:15px;
+    left:10px;
+}
+#Button4{
+    position:absolute;
+    right:19px;
+}
 
 #loading { /*loader starts*/
     display: flex;

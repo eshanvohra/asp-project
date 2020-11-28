@@ -25,7 +25,12 @@ namespace login2
         {
 
         }
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("cust_after_login.aspx?custid=" + TextBox1.Text + "");
 
+
+        }
         protected void Button1_Click(object sender, EventArgs e)
         {
             try

@@ -20,9 +20,10 @@
          <span></span>
          <span class="loader1">Loading</span>
         </div>
-         <asp:Button ID="Button4" class="myButton" runat="server" Text="Back to Home Page" CausesValidation="False" PostBackUrl="homepage.aspx"/>
+         <div class="buttons">
+         <asp:Button ID="Button4" class="myButton" runat="server" Text="Back to Dashboard" CausesValidation="False" OnClick="Button4_Click"/>
                 <asp:Button ID="Button7" class="myButton" runat="server" Text="Log Out" CausesValidation="False" PostBackUrl="loginpage.aspx"/>
-            
+            </div>
   <div class="container">
          
         <div class="auto-style1 reg-box">

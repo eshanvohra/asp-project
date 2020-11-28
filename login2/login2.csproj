@@ -82,6 +82,7 @@
     </Content>
     <Content Include="BillManager.aspx" />
     <Content Include="ChequeRequest.aspx" />
+    <Content Include="ContactUs.aspx" />
     <Content Include="CreateNewAccount.aspx" />
     <Content Include="Credit_Card_Request.aspx" />
     <Content Include="Css_New\aboutus.css" />
@@ -89,6 +90,7 @@
     <Content Include="Css_New\adminpage.css" />
     <Content Include="Css_New\billmanager.css" />
     <Content Include="Css_New\chequerequest.css" />
+    <Content Include="Css_New\contactus.css" />
     <Content Include="Css_New\createnewaccount.css" />
     <Content Include="Css_New\creditcardrequest.css" />
     <Content Include="Css_New\custafterlogin.css" />
@@ -111,6 +113,16 @@
     <Content Include="Images\back.jpg" />
     <Content Include="Images\Background.jpg" />
     <Content Include="Images\backImg.jpg" />
+    <Content Include="Images\banner1.jpg" />
+    <Content Include="Images\banner10.jpg" />
+    <Content Include="Images\banner2.jpg" />
+    <Content Include="Images\banner3.jpg" />
+    <Content Include="Images\banner4.jpg" />
+    <Content Include="Images\banner5.jpg" />
+    <Content Include="Images\banner6.jpg" />
+    <Content Include="Images\banner7.jpg" />
+    <Content Include="Images\banner8.jpg" />
+    <Content Include="Images\banner9.jpg" />
     <Content Include="Images\bg.jpg" />
     <Content Include="Images\bglogo.png" />
     <Content Include="Images\cheque.jpg" />
@@ -184,6 +196,13 @@
     </Compile>
     <Compile Include="ChequeRequest.aspx.designer.cs">
       <DependentUpon>ChequeRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateNewAccount.aspx.cs">
       <DependentUpon>CreateNewAccount.aspx</DependentUpon>
