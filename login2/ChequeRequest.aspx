@@ -32,7 +32,7 @@
                 <h1 class="mt-3 mb-3 text-center"> Cheque Request Form</h1>
 
             Your Customer Id is:&nbsp;
-            <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server" ReadOnly="True"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" Display="Dynamic" ErrorMessage="This is Required" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
             <br />
             <br />

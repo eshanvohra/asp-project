@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
+    <Content Include="admindashboard.aspx" />
     <Content Include="AdminLogin.aspx" />
     <Content Include="AdminPage.aspx" />
     <Content Include="App_Data\registration_page.mdf" />
@@ -160,6 +161,7 @@
     <Content Include="policies.aspx" />
     <Content Include="registration.aspx" />
     <Content Include="pngtree-business-male-icon-vector-png-image_916468.jpg" />
+    <Content Include="ServiceRequest.aspx" />
     <Content Include="Services.aspx" />
     <Content Include="telephonebillpay.aspx" />
     <Content Include="Transaction.aspx" />
@@ -173,6 +175,13 @@
     </Compile>
     <Compile Include="AboutUs.aspx.designer.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admindashboard.aspx.cs">
+      <DependentUpon>admindashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admindashboard.aspx.designer.cs">
+      <DependentUpon>admindashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminLogin.aspx.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
@@ -280,6 +289,13 @@
       <DependentUpon>registration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceRequest.aspx.cs">
+      <DependentUpon>ServiceRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceRequest.aspx.designer.cs">
+      <DependentUpon>ServiceRequest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Services.aspx.cs">
       <DependentUpon>Services.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

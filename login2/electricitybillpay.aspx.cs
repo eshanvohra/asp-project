@@ -24,7 +24,8 @@ namespace login2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            string name = Request.QueryString["custid"];
+            TextBox1.Text = name;
 
         }
         protected void Button4_Click(object sender, EventArgs e)

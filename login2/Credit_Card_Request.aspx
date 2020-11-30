@@ -33,7 +33,7 @@
             <br />
 
             Your Customer Id is:&nbsp;
-            <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server" OnTextChanged="TextBox1_TextChanged" ReadOnly="True"></asp:TextBox>
             <br />
             <br />
             <asp:Button ID="Button2" class="btn btn-primary" runat="server" Text="Fetch Details" OnClick="Button2_Click" />

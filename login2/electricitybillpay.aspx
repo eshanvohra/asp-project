@@ -33,7 +33,7 @@
                 <tr>
                     <td>Enter Customer ID:</td>
                     <td>
-                        <asp:TextBox ID="TextBox1" runat="server" ForeColor="#192A56"></asp:TextBox>
+                        <asp:TextBox ID="TextBox1" runat="server" ForeColor="#192A56" ReadOnly="True"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" Display="Dynamic" ErrorMessage="This is Required" ForeColor="#000099" SetFocusOnError="True"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox1" Display="Dynamic" ErrorMessage="Enter Valid Customer ID" ForeColor="#000099" SetFocusOnError="True" ValidationExpression="^(ESB)\d{5}"></asp:RegularExpressionValidator>
                     </td>

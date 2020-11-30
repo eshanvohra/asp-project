@@ -23,6 +23,8 @@ namespace login2
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string n = Request.QueryString["custid"];
+            TextBox1.Text = n;
 
         }
         protected void Button3_Click(object sender, EventArgs e)
