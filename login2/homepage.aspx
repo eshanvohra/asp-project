@@ -37,8 +37,9 @@
     <div class="navbar-nav">
       <a class="nav-link active " href="#"><i class="fa fa-home" aria-hidden="true" ></i>Home <span class="sr-only">(current)</span></a>
       <asp:HyperLink runat="server" NavigateUrl="AboutUs.aspx" class="nav-link "><i class="fa fa-users"></i>About Us</asp:HyperLink>
-      <a class="nav-link " href="#" ><i class="fa fa-book"></i>Our Policies</a>
+   
     <asp:HyperLink runat="server" NavigateUrl="AdminLogin.aspx" class="nav-link "><i class="fa fa-users"></i>Admin Login</asp:HyperLink>
+    <asp:HyperLink runat="server" NavigateUrl="policies.aspx" class="nav-link "><i class="fa fa-book"></i>Our Policies</asp:HyperLink>
     
       <asp:HyperLink runat="server" NavigateUrl="OurTeam.aspx" class="nav-link "><i class="fa fa-address-book"></i>Reach Us</asp:HyperLink>
       <asp:HyperLink runat="server" NavigateUrl="ContactUs.aspx" class="nav-link "><i class="fa fa-address-book"></i>Contact US</asp:HyperLink>
@@ -50,6 +51,8 @@
 </nav>
             </div>
             <div class="landing">
+                          
+
         <div id="ImageSlider" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators imp">
             <li data-target="#ImageSlider" class="bg-info active" data-slide-to="0"></li>
@@ -112,12 +115,23 @@
             <span class="sr-only">Next</span>
           </a>
     </div>
+
+
         <div class="buttons">
           <asp:Button ID="Button4" class="mainButtons" runat="server"  Text="Login" OnClick="Button4_Click"/>
           <asp:Button ID="Button5" class="mainButtons" runat="server"  Text="Register" OnClick="Button5_Click"/>
           <asp:Button ID="Button6" class="mainButtons" runat="server"  Text="Open new Account" OnClick="Button6_Click"/>
    </div>
-                </div>
+                
+                <div class="wpanel_marquee" id="message">
+                  <p>ESB is upgrading its Internet Banking platform for better customer experience. During this activity, there may be some intermittent issues on 10-Dec-2020. We regret the inconvenience caused.  &nbsp;&nbsp;|&nbsp;&nbsp;  Attention Retail/Corporate INB Users, transaction OTP will be made mandatory for all merchant related transactions, hence please have your mobile number registered if the same has not been done until now.  &nbsp;&nbsp;|&nbsp;&nbsp;  <span style="color: #0070c0;">For enhanced secure banking experience, ESB Internet Banking website is migrating to its own generic Top Level Domain “.esb”.</span> &nbsp; <span style="color: #ff0000;">The new ESB Internet Banking URL for Retail users will be “retail.onlineesb.esb”. </span>  &nbsp;&nbsp;|&nbsp;&nbsp;  Dear Customer, if you have donated for PM CARES through ESB Internet Banking, you can download the Receipt from PMCares portal of govt. using the reference number available with you.  &nbsp;&nbsp;|&nbsp;&nbsp;  Have you tried our new simplified and intuitive business banking platform? Log in to <a href="https://yonobusiness.esb/"><u>yonobusiness.esb</u></a> to avail business banking services.</p>
+               </div>
+                <div class="wpanel_marquee" id="message">
+                  <p>Experience the best With ESB.</p>
+               </div>
+
+                
+            </div>
         <br />
         <br />
         <br />

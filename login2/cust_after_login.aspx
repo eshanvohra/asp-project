@@ -52,6 +52,7 @@
             <asp:Button ID="Button1" class="mainButtons" runat="server" Text="Deactivate UserID" OnClick="Button1_Click"  />
             <asp:Button ID="Button2" class="mainButtons"  runat="server" Text="Update Profile" OnClick="Button2_Click" />
             <asp:Button ID="Button4" class="mainButtons"  runat="server" Text="Transactions" OnClick="Button4_Click" />
+            <asp:Button ID="Button5" class="mainButtons"  runat="server" Text="All Services" OnClick="Button5_Click" />
                      <asp:Button ID="Button3" class="mainButtons" runat="server" Text="Back to Home Page" CausesValidation="False" PostBackUrl="homepage.aspx" Visible="false"/>
         <br />
         <br />

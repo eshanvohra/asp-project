@@ -52,9 +52,10 @@
                 <tr class="styTr">
                     <td colspan="3" class="btn">
                         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Sign In" />
+                        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Forgot Password" CausesValidation="False" />
                         <asp:GridView ID="GridView1" runat="server">
                         </asp:GridView>
-                        <asp:Label ID="Label1" runat="server"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
                     </td>
                 </tr>
             </table>

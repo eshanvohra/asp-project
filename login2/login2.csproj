@@ -133,15 +133,19 @@
     <Content Include="Images\electricity.jpg" />
     <Content Include="Images\favicon.jpg" />
     <Content Include="Images\favicon.png" />
+    <Content Include="Images\fdinterest.png" />
     <Content Include="Images\gettyimages-173932685-612x612.jpg" />
     <Content Include="Images\i1.jpg" />
     <Content Include="Images\i2.jpg" />
     <Content Include="Images\i3.jpg" />
+    <Content Include="Images\interestrate.png" />
     <Content Include="Images\light.png" />
     <Content Include="Images\logonewnew.png" />
     <Content Include="Images\nameicon.png" />
     <Content Include="Images\password11icon.png" />
     <Content Include="Images\pic.png" />
+    <Content Include="Images\policiesbg.png" />
+    <Content Include="Images\sbinterest.png" />
     <Content Include="Images\servicebg.jpg" />
     <Content Include="Images\success.jpg" />
     <Content Include="Images\success.png" />
@@ -153,6 +157,7 @@
     <Content Include="Images\vision.jpg" />
     <Content Include="loginpage.aspx" />
     <Content Include="OurTeam.aspx" />
+    <Content Include="policies.aspx" />
     <Content Include="registration.aspx" />
     <Content Include="pngtree-business-male-icon-vector-png-image_916468.jpg" />
     <Content Include="Services.aspx" />
@@ -259,6 +264,13 @@
     </Compile>
     <Compile Include="OurTeam.aspx.designer.cs">
       <DependentUpon>OurTeam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="policies.aspx.cs">
+      <DependentUpon>policies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="policies.aspx.designer.cs">
+      <DependentUpon>policies.aspx</DependentUpon>
     </Compile>
     <Compile Include="registration.aspx.cs">
       <DependentUpon>registration.aspx</DependentUpon>
